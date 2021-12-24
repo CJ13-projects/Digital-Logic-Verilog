@@ -1,0 +1,47 @@
+|triscFSM1
+SysClock => state~1.DATAIN
+StartStop => state~3.DATAIN
+INC => nextstate.T.IN1
+INC => nextstate.P.OUTPUTSELECT
+INC => nextstate.M.OUTPUTSELECT
+INC => nextstate.I.OUTPUTSELECT
+INC => nextstate.H.OUTPUTSELECT
+INC => nextstate.G.OUTPUTSELECT
+INC => nextstate.F.DATAA
+CLR => nextstate.T.IN1
+CLR => nextstate.P.OUTPUTSELECT
+CLR => nextstate.M.OUTPUTSELECT
+CLR => nextstate.I.OUTPUTSELECT
+CLR => nextstate.H.OUTPUTSELECT
+CLR => nextstate.G.DATAA
+JMP => nextstate.T.IN1
+JMP => nextstate.P.OUTPUTSELECT
+JMP => nextstate.M.OUTPUTSELECT
+JMP => nextstate.I.OUTPUTSELECT
+JMP => nextstate.H.DATAA
+LDA => nextstate.T.IN1
+LDA => nextstate.P.OUTPUTSELECT
+LDA => nextstate.M.OUTPUTSELECT
+LDA => nextstate.I.DATAA
+STA => nextstate.T.IN0
+ADD => nextstate.T.IN1
+ADD => nextstate.P.DATAA
+ADD => nextstate.M.DATAA
+C0 <= C0.DB_MAX_OUTPUT_PORT_TYPE
+C1 <= C1.DB_MAX_OUTPUT_PORT_TYPE
+C2 <= C7.DB_MAX_OUTPUT_PORT_TYPE
+C3 <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+C4 <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+C5 <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+C7 <= C7.DB_MAX_OUTPUT_PORT_TYPE
+C8 <= C8.DB_MAX_OUTPUT_PORT_TYPE
+C9 <= C9.DB_MAX_OUTPUT_PORT_TYPE
+C10 <= <GND>
+C11 <= C11.DB_MAX_OUTPUT_PORT_TYPE
+C12 <= C12.DB_MAX_OUTPUT_PORT_TYPE
+C13 <= C13.DB_MAX_OUTPUT_PORT_TYPE
+C14 <= <GND>
+C15 <= <GND>
+C16 <= C16.DB_MAX_OUTPUT_PORT_TYPE
+
+

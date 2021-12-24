@@ -1,0 +1,85 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\justu\Desktop\Spring 2021\CSE 2441\Full Adder\simulation\qsim
+vFullAdder
+Z1 I;T9<W9>@mW=lX=Wbgo^MM1
+Z2 VC?14Fjn^HDnn]XeP`iHdM0
+Z3 dC:\Users\justu\Desktop\Spring 2021\CSE 2441\Full Adder\simulation\qsim
+Z4 w1612562601
+Z5 8FullAdder.vo
+Z6 FFullAdder.vo
+L0 31
+Z7 OV;L;10.1d;51
+r1
+31
+Z8 o-work work -O0
+Z9 n@full@adder
+!i10b 1
+Z10 !s100 >OYce2MC;=>96bocX`zhD1
+!s85 0
+Z11 !s108 1612562605.630000
+Z12 !s107 FullAdder.vo|
+Z13 !s90 -work|work|FullAdder.vo|
+!s101 -O0
+vFullAdder_vlg_check_tst
+!i10b 1
+!s100 Qobe`gTXFg8>TgdNV2hnb1
+I;mah75`>Yl3jL^ZeX^G2]1
+VBXRi_U08A7[A@9Kj2XKm=1
+R3
+Z14 w1612562600
+Z15 8FullAdder.vt
+Z16 FFullAdder.vt
+L0 61
+R7
+r1
+!s85 0
+31
+Z17 !s108 1612562605.692000
+Z18 !s107 FullAdder.vt|
+Z19 !s90 -work|work|FullAdder.vt|
+!s101 -O0
+R8
+n@full@adder_vlg_check_tst
+vFullAdder_vlg_sample_tst
+!i10b 1
+!s100 0fB_Nc2>KbhCEg9zOPI^c2
+I6cmBXCRbQ3CBVCDG5jX=k0
+VeE=I_a9?47eUg1XK:eeJX0
+R3
+R14
+R15
+R16
+L0 29
+R7
+r1
+!s85 0
+31
+R17
+R18
+R19
+!s101 -O0
+R8
+n@full@adder_vlg_sample_tst
+vFullAdder_vlg_vec_tst
+!i10b 1
+!s100 Y:3Dh8mC;ZhRXY^22>k1?3
+IU`9LPR:HnSP4Xed2kKez30
+V]<3@QoABVjl5_[FYU:^O:1
+R3
+R14
+R15
+R16
+L0 183
+R7
+r1
+!s85 0
+31
+R17
+R18
+R19
+!s101 -O0
+R8
+n@full@adder_vlg_vec_tst

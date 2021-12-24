@@ -1,0 +1,58 @@
+|Accumulator
+A1 <= Counter:inst.Aout
+LOAD => Counter:inst.LOAD
+AA => inst3.IN0
+SRC => inst15.IN0
+SRC => inst2.IN1
+SRC => inst4.IN1
+SRC => inst6.IN1
+SRC => inst8.IN1
+AM => inst2.IN0
+BA => inst5.IN0
+BM => inst4.IN0
+CA => inst7.IN0
+CM => inst6.IN0
+DA => inst9.IN0
+DM => inst8.IN0
+UP => Counter:inst.INCREMENT
+CLEAR => Counter:inst.CLEAR
+A2 <= Counter:inst.Aout
+B1 <= Counter:inst.Bout
+B2 <= Counter:inst.Bout
+C1 <= Counter:inst.Cout
+C2 <= Counter:inst.Cout
+D1 <= Counter:inst.Dout
+D2 <= Counter:inst.Dout
+
+
+|Accumulator|Counter:inst
+Aout <= 74193:inst.QA
+D => 74193:inst.D
+C => 74193:inst.C
+B => 74193:inst.B
+A => 74193:inst.A
+CLEAR => 74193:inst.CLR
+INCREMENT => 74193:inst.UP
+LOAD => inst3.IN0
+Bout <= 74193:inst.QB
+Cout <= 74193:inst.QC
+Dout <= 74193:inst.QD
+
+
+|Accumulator|Counter:inst|74193:inst
+BON <= 28.DB_MAX_OUTPUT_PORT_TYPE
+CLR => 44.IN0
+LDN => 43.IN0
+B => 53.IN2
+A => 52.IN2
+DN => 90.IN0
+UP => 89.IN0
+C => 54.IN2
+D => 55.IN2
+CON <= 27.DB_MAX_OUTPUT_PORT_TYPE
+QD <= 23.DB_MAX_OUTPUT_PORT_TYPE
+QC <= 24.DB_MAX_OUTPUT_PORT_TYPE
+QB <= 25.DB_MAX_OUTPUT_PORT_TYPE
+QA <= 26.DB_MAX_OUTPUT_PORT_TYPE
+
+

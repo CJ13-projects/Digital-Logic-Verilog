@@ -1,0 +1,730 @@
+Analysis & Synthesis report for TRISC
+Fri Jun 18 00:38:11 2021
+Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. State Machine - |TRISC|ControlUnit:inst|triscFSM1:inst|state
+ 10. User-Specified and Inferred Latches
+ 11. Registers Removed During Synthesis
+ 12. General Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Source assignments for TRISCRAMspring2021:inst12|altsyncram:altsyncram_component|altsyncram_73d1:auto_generated
+ 15. Parameter Settings for User Entity Instance: TRISCRAMspring2021:inst12|altsyncram:altsyncram_component
+ 16. Parameter Settings for User Entity Instance: ControlUnit:inst|triscFSM1:inst
+ 17. altsyncram Parameter Settings by Entity Instance
+ 18. Post-Synthesis Netlist Statistics for Top Partition
+ 19. Elapsed Time Per Partition
+ 20. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Fri Jun 18 00:38:11 2021       ;
+; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
+; Revision Name                      ; TRISC                                       ;
+; Top-level Entity Name              ; TRISC                                       ;
+; Family                             ; MAX 10                                      ;
+; Total logic elements               ; 149                                         ;
+;     Total combinational functions  ; 144                                         ;
+;     Dedicated logic registers      ; 34                                          ;
+; Total registers                    ; 34                                          ;
+; Total pins                         ; 44                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 128                                         ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
+; UFM blocks                         ; 0                                           ;
+; ADC blocks                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; 10M08DAF484C8G     ;                    ;
+; Top-level entity name                                            ; TRISC              ; TRISC              ;
+; Family name                                                      ; MAX 10             ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 6           ;
+; Maximum allowed            ; 6           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 6           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-6         ;   0.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                         ;
++--------------------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path           ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                                     ; Library ;
++--------------------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------------------------------------+---------+
+; ../Register/output_files/Accumulator.bdf   ; yes             ; User Block Diagram/Schematic File  ; C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/Register/output_files/Accumulator.bdf   ;         ;
+; ../Blank/Block2.bdf                        ; yes             ; User Block Diagram/Schematic File  ; C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/Blank/Block2.bdf                        ;         ;
+; ../RippleCarryAdder/RippleCarryAdder.bdf   ; yes             ; User Block Diagram/Schematic File  ; C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/RippleCarryAdder/RippleCarryAdder.bdf   ;         ;
+; ../Register/pipoRegister2.bdf              ; yes             ; User Block Diagram/Schematic File  ; C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/Register/pipoRegister2.bdf              ;         ;
+; ../Lab10/LabTen.v                          ; yes             ; User Verilog HDL File              ; C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/Lab10/LabTen.v                          ;         ;
+; ../Full Adder/FullAdder.bdf                ; yes             ; User Block Diagram/Schematic File  ; C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/Full Adder/FullAdder.bdf                ;         ;
+; ../Counter/Counter.bdf                     ; yes             ; User Block Diagram/Schematic File  ; C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/Counter/Counter.bdf                     ;         ;
+; ../ControlUnit/ControlUnit.bdf             ; yes             ; User Block Diagram/Schematic File  ; C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/ControlUnit/ControlUnit.bdf             ;         ;
+; ../Controller/triscFSM1.v                  ; yes             ; User Verilog HDL File              ; C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/Controller/triscFSM1.v                  ;         ;
+; ../BcdToSeven/BcdToSeven.v                 ; yes             ; User Verilog HDL File              ; C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/BcdToSeven/BcdToSeven.v                 ;         ;
+; ../ALU/Multiplexer421.bdf                  ; yes             ; User Block Diagram/Schematic File  ; C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/ALU/Multiplexer421.bdf                  ;         ;
+; ../ALU/ALUSelection.bdf                    ; yes             ; User Block Diagram/Schematic File  ; C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/ALU/ALUSelection.bdf                    ;         ;
+; ../ALU/ALU.bdf                             ; yes             ; User Block Diagram/Schematic File  ; C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/ALU/ALU.bdf                             ;         ;
+; ../ALU/AdderSubtractorOVR.bdf              ; yes             ; User Block Diagram/Schematic File  ; C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/ALU/AdderSubtractorOVR.bdf              ;         ;
+; ../ALU/4BitXOR.bdf                         ; yes             ; User Block Diagram/Schematic File  ; C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/ALU/4BitXOR.bdf                         ;         ;
+; ../ALU/4BitAND.bdf                         ; yes             ; User Block Diagram/Schematic File  ; C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/ALU/4BitAND.bdf                         ;         ;
+; ../TRISCRAMspring2021/TRISCRAMspring2021.v ; yes             ; User Wizard-Generated File         ; C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/TRISCRAMspring2021/TRISCRAMspring2021.v ;         ;
+; TRISC.bdf                                  ; yes             ; User Block Diagram/Schematic File  ; C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/TRISC-Final/TRISC.bdf                   ;         ;
+; altsyncram.tdf                             ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/altsyncram.tdf                            ;         ;
+; stratix_ram_block.inc                      ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/stratix_ram_block.inc                     ;         ;
+; lpm_mux.inc                                ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/lpm_mux.inc                               ;         ;
+; lpm_decode.inc                             ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/lpm_decode.inc                            ;         ;
+; aglobal180.inc                             ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/aglobal180.inc                            ;         ;
+; a_rdenreg.inc                              ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/a_rdenreg.inc                             ;         ;
+; altrom.inc                                 ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/altrom.inc                                ;         ;
+; altram.inc                                 ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/altram.inc                                ;         ;
+; altdpram.inc                               ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/altdpram.inc                              ;         ;
+; db/altsyncram_73d1.tdf                     ; yes             ; Auto-Generated Megafunction        ; C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/TRISC-Final/db/altsyncram_73d1.tdf      ;         ;
+; 74175.bdf                                  ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.0/quartus/libraries/others/maxplus2/74175.bdf                               ;         ;
+; 74193.bdf                                  ; yes             ; Megafunction                       ; c:/intelfpga_lite/18.0/quartus/libraries/others/maxplus2/74193.bdf                               ;         ;
++--------------------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimated Total logic elements              ; 149         ;
+;                                             ;             ;
+; Total combinational functions               ; 144         ;
+; Logic element usage by number of LUT inputs ;             ;
+;     -- 4 input functions                    ; 59          ;
+;     -- 3 input functions                    ; 54          ;
+;     -- <=2 input functions                  ; 31          ;
+;                                             ;             ;
+; Logic elements by mode                      ;             ;
+;     -- normal mode                          ; 144         ;
+;     -- arithmetic mode                      ; 0           ;
+;                                             ;             ;
+; Total registers                             ; 34          ;
+;     -- Dedicated logic registers            ; 34          ;
+;     -- I/O registers                        ; 0           ;
+;                                             ;             ;
+; I/O pins                                    ; 44          ;
+; Total memory bits                           ; 128         ;
+;                                             ;             ;
+; Embedded Multiplier 9-bit elements          ; 0           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; CLOCK~input ;
+; Maximum fan-out                             ; 23          ;
+; Total fan-out                               ; 695         ;
+; Average fan-out                             ; 2.54        ;
++---------------------------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                  ;
++-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------------------------+--------------------+--------------+
+; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                             ; Entity Name        ; Library Name ;
++-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------------------------+--------------------+--------------+
+; |TRISC                                    ; 144 (2)             ; 34 (0)                    ; 128         ; 0          ; 0            ; 0       ; 0         ; 44   ; 0            ; 0          ; |TRISC                                                                                          ; TRISC              ; work         ;
+;    |Accumulator:inst15|                   ; 27 (0)              ; 4 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TRISC|Accumulator:inst15                                                                       ; Accumulator        ; work         ;
+;       |Counter:inst|                      ; 27 (0)              ; 4 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TRISC|Accumulator:inst15|Counter:inst                                                          ; Counter            ; work         ;
+;          |74193:inst|                     ; 27 (27)             ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TRISC|Accumulator:inst15|Counter:inst|74193:inst                                               ; 74193              ; work         ;
+;    |BcdToSeven:inst1|                     ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TRISC|BcdToSeven:inst1                                                                         ; BcdToSeven         ; work         ;
+;    |BcdToSeven:inst2|                     ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TRISC|BcdToSeven:inst2                                                                         ; BcdToSeven         ; work         ;
+;    |BcdToSeven:inst3|                     ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TRISC|BcdToSeven:inst3                                                                         ; BcdToSeven         ; work         ;
+;    |BcdToSeven:inst4|                     ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TRISC|BcdToSeven:inst4                                                                         ; BcdToSeven         ; work         ;
+;    |Block2:inst17|                        ; 4 (4)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TRISC|Block2:inst17                                                                            ; Block2             ; work         ;
+;    |ControlUnit:inst|                     ; 56 (0)              ; 22 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TRISC|ControlUnit:inst                                                                         ; ControlUnit        ; work         ;
+;       |LabTen:inst2|                      ; 13 (13)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TRISC|ControlUnit:inst|LabTen:inst2                                                            ; LabTen             ; work         ;
+;       |triscFSM1:inst|                    ; 43 (43)             ; 22 (22)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TRISC|ControlUnit:inst|triscFSM1:inst                                                          ; triscFSM1          ; work         ;
+;    |Counter:inst6|                        ; 27 (0)              ; 4 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TRISC|Counter:inst6                                                                            ; Counter            ; work         ;
+;       |74193:inst|                        ; 27 (27)             ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TRISC|Counter:inst6|74193:inst                                                                 ; 74193              ; work         ;
+;    |TRISCRAMspring2021:inst12|            ; 0 (0)               ; 0 (0)                     ; 128         ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TRISC|TRISCRAMspring2021:inst12                                                                ; TRISCRAMspring2021 ; work         ;
+;       |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 128         ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TRISC|TRISCRAMspring2021:inst12|altsyncram:altsyncram_component                                ; altsyncram         ; work         ;
+;          |altsyncram_73d1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 128         ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TRISC|TRISCRAMspring2021:inst12|altsyncram:altsyncram_component|altsyncram_73d1:auto_generated ; altsyncram_73d1    ; work         ;
+;    |pipoRegister2:inst9|                  ; 0 (0)               ; 4 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TRISC|pipoRegister2:inst9                                                                      ; pipoRegister2      ; work         ;
+;       |74175:inst9|                       ; 0 (0)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TRISC|pipoRegister2:inst9|74175:inst9                                                          ; 74175              ; work         ;
++-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------------------------+--------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                         ;
++-----------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+----------------------------+
+; Name                                                                                                ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF                        ;
++-----------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+----------------------------+
+; TRISCRAMspring2021:inst12|altsyncram:altsyncram_component|altsyncram_73d1:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 16           ; 8            ; --           ; --           ; 128  ; TRISCRAMspring2021data.hex ;
++-----------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+----------------------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |TRISC|ControlUnit:inst|triscFSM1:inst|state                                                                                                                                                                        ;
++---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+; Name    ; state.V ; state.U ; state.T ; state.S ; state.R ; state.Q ; state.P ; state.O ; state.N ; state.M ; state.L ; state.K ; state.J ; state.I ; state.H ; state.G ; state.F ; state.E ; state.D ; state.C ; state.B ; state.A ;
++---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+; state.A ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ;
+; state.B ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 1       ; 1       ;
+; state.C ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 1       ; 0       ; 1       ;
+; state.D ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 1       ; 0       ; 0       ; 1       ;
+; state.E ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 1       ; 0       ; 0       ; 0       ; 1       ;
+; state.F ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 1       ; 0       ; 0       ; 0       ; 0       ; 1       ;
+; state.G ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 1       ; 0       ; 0       ; 0       ; 0       ; 0       ; 1       ;
+; state.H ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 1       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 1       ;
+; state.I ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 1       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 1       ;
+; state.J ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 1       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 1       ;
+; state.K ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 1       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 1       ;
+; state.L ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 1       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 1       ;
+; state.M ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 1       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 1       ;
+; state.N ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 1       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 1       ;
+; state.O ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 1       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 1       ;
+; state.P ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 1       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 1       ;
+; state.Q ; 0       ; 0       ; 0       ; 0       ; 0       ; 1       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 1       ;
+; state.R ; 0       ; 0       ; 0       ; 0       ; 1       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 1       ;
+; state.S ; 0       ; 0       ; 0       ; 1       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 1       ;
+; state.T ; 0       ; 0       ; 1       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 1       ;
+; state.U ; 0       ; 1       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 1       ;
+; state.V ; 1       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 1       ;
++---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                       ;
++-----------------------------------------------------+--------------------------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal                        ; Free of Timing Hazards ;
++-----------------------------------------------------+--------------------------------------------+------------------------+
+; ControlUnit:inst|triscFSM1:inst|nextstate.H_767     ; GND                                        ; yes                    ;
+; ControlUnit:inst|triscFSM1:inst|nextstate.E_818     ; ControlUnit:inst|triscFSM1:inst|Selector29 ; yes                    ;
+; ControlUnit:inst|triscFSM1:inst|nextstate.I_751     ; GND                                        ; yes                    ;
+; ControlUnit:inst|triscFSM1:inst|nextstate.J_735     ; ControlUnit:inst|triscFSM1:inst|Selector29 ; yes                    ;
+; ControlUnit:inst|triscFSM1:inst|nextstate.K_716     ; ControlUnit:inst|triscFSM1:inst|Selector29 ; yes                    ;
+; ControlUnit:inst|triscFSM1:inst|nextstate.M_678     ; GND                                        ; yes                    ;
+; ControlUnit:inst|triscFSM1:inst|nextstate.N_662     ; ControlUnit:inst|triscFSM1:inst|Selector29 ; yes                    ;
+; ControlUnit:inst|triscFSM1:inst|nextstate.O_643     ; ControlUnit:inst|triscFSM1:inst|Selector29 ; yes                    ;
+; ControlUnit:inst|triscFSM1:inst|nextstate.P_624     ; GND                                        ; yes                    ;
+; ControlUnit:inst|triscFSM1:inst|nextstate.Q_608     ; ControlUnit:inst|triscFSM1:inst|Selector29 ; yes                    ;
+; ControlUnit:inst|triscFSM1:inst|nextstate.R_589     ; ControlUnit:inst|triscFSM1:inst|Selector29 ; yes                    ;
+; ControlUnit:inst|triscFSM1:inst|nextstate.C_856     ; ControlUnit:inst|triscFSM1:inst|Selector29 ; yes                    ;
+; ControlUnit:inst|triscFSM1:inst|nextstate.D_837     ; ControlUnit:inst|triscFSM1:inst|Selector29 ; yes                    ;
+; ControlUnit:inst|triscFSM1:inst|nextstate.G_783     ; GND                                        ; yes                    ;
+; ControlUnit:inst|triscFSM1:inst|nextstate.F_799     ; GND                                        ; yes                    ;
+; ControlUnit:inst|triscFSM1:inst|nextstate.L_697     ; ControlUnit:inst|triscFSM1:inst|Selector29 ; yes                    ;
+; ControlUnit:inst|triscFSM1:inst|nextstate.U_532     ; ControlUnit:inst|triscFSM1:inst|Selector29 ; yes                    ;
+; ControlUnit:inst|triscFSM1:inst|nextstate.V_513     ; ControlUnit:inst|triscFSM1:inst|Selector29 ; yes                    ;
+; ControlUnit:inst|LabTen:inst2|JMP                   ; ControlUnit:inst|LabTen:inst2|WideOr1      ; yes                    ;
+; ControlUnit:inst|LabTen:inst2|CLR                   ; ControlUnit:inst|LabTen:inst2|WideOr1      ; yes                    ;
+; ControlUnit:inst|LabTen:inst2|INC                   ; ControlUnit:inst|LabTen:inst2|WideOr1      ; yes                    ;
+; ControlUnit:inst|LabTen:inst2|ADD                   ; ControlUnit:inst|LabTen:inst2|WideOr1      ; yes                    ;
+; ControlUnit:inst|LabTen:inst2|STA                   ; ControlUnit:inst|LabTen:inst2|WideOr1      ; yes                    ;
+; ControlUnit:inst|LabTen:inst2|LDA                   ; ControlUnit:inst|LabTen:inst2|WideOr1      ; yes                    ;
+; ControlUnit:inst|triscFSM1:inst|nextstate.B_875     ; ControlUnit:inst|triscFSM1:inst|Selector29 ; yes                    ;
+; ControlUnit:inst|triscFSM1:inst|nextstate.T_551     ; ControlUnit:inst|triscFSM1:inst|Selector29 ; yes                    ;
+; ControlUnit:inst|triscFSM1:inst|nextstate.S_570     ; ControlUnit:inst|triscFSM1:inst|Selector29 ; yes                    ;
+; Number of user-specified and inferred latches = 27  ;                                            ;                        ;
++-----------------------------------------------------+--------------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++--------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                             ;
++-----------------------------------------+--------------------------------------+
+; Register name                           ; Reason for Removal                   ;
++-----------------------------------------+--------------------------------------+
+; pipoRegister2:inst11|74175:inst9|16     ; Stuck at GND due to stuck port clock ;
+; pipoRegister2:inst11|74175:inst9|15     ; Stuck at GND due to stuck port clock ;
+; pipoRegister2:inst11|74175:inst9|14     ; Stuck at GND due to stuck port clock ;
+; pipoRegister2:inst11|74175:inst9|13     ; Stuck at GND due to stuck port clock ;
+; ControlUnit:inst|triscFSM1:inst|state~4 ; Lost fanout                          ;
+; ControlUnit:inst|triscFSM1:inst|state~5 ; Lost fanout                          ;
+; ControlUnit:inst|triscFSM1:inst|state~6 ; Lost fanout                          ;
+; ControlUnit:inst|triscFSM1:inst|state~7 ; Lost fanout                          ;
+; ControlUnit:inst|triscFSM1:inst|state~8 ; Lost fanout                          ;
+; Total Number of Removed Registers = 9   ;                                      ;
++-----------------------------------------+--------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 34    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 30    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
+; 6:1                ; 2 bits    ; 8 LEs         ; 2 LEs                ; 6 LEs                  ; No         ; |TRISC|ControlUnit:inst|triscFSM1:inst|nextstate.M ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Source assignments for TRISCRAMspring2021:inst12|altsyncram:altsyncram_component|altsyncram_73d1:auto_generated ;
++---------------------------------+--------------------+------+---------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                ;
++---------------------------------+--------------------+------+---------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                 ;
++---------------------------------+--------------------+------+---------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: TRISCRAMspring2021:inst12|altsyncram:altsyncram_component ;
++------------------------------------+----------------------------+--------------------------------------+
+; Parameter Name                     ; Value                      ; Type                                 ;
++------------------------------------+----------------------------+--------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                          ; Untyped                              ;
+; AUTO_CARRY_CHAINS                  ; ON                         ; AUTO_CARRY                           ;
+; IGNORE_CARRY_BUFFERS               ; OFF                        ; IGNORE_CARRY                         ;
+; AUTO_CASCADE_CHAINS                ; ON                         ; AUTO_CASCADE                         ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                        ; IGNORE_CASCADE                       ;
+; WIDTH_BYTEENA                      ; 1                          ; Untyped                              ;
+; OPERATION_MODE                     ; SINGLE_PORT                ; Untyped                              ;
+; WIDTH_A                            ; 8                          ; Signed Integer                       ;
+; WIDTHAD_A                          ; 4                          ; Signed Integer                       ;
+; NUMWORDS_A                         ; 16                         ; Signed Integer                       ;
+; OUTDATA_REG_A                      ; CLOCK0                     ; Untyped                              ;
+; ADDRESS_ACLR_A                     ; NONE                       ; Untyped                              ;
+; OUTDATA_ACLR_A                     ; NONE                       ; Untyped                              ;
+; WRCONTROL_ACLR_A                   ; NONE                       ; Untyped                              ;
+; INDATA_ACLR_A                      ; NONE                       ; Untyped                              ;
+; BYTEENA_ACLR_A                     ; NONE                       ; Untyped                              ;
+; WIDTH_B                            ; 1                          ; Untyped                              ;
+; WIDTHAD_B                          ; 1                          ; Untyped                              ;
+; NUMWORDS_B                         ; 1                          ; Untyped                              ;
+; INDATA_REG_B                       ; CLOCK1                     ; Untyped                              ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                     ; Untyped                              ;
+; RDCONTROL_REG_B                    ; CLOCK1                     ; Untyped                              ;
+; ADDRESS_REG_B                      ; CLOCK1                     ; Untyped                              ;
+; OUTDATA_REG_B                      ; UNREGISTERED               ; Untyped                              ;
+; BYTEENA_REG_B                      ; CLOCK1                     ; Untyped                              ;
+; INDATA_ACLR_B                      ; NONE                       ; Untyped                              ;
+; WRCONTROL_ACLR_B                   ; NONE                       ; Untyped                              ;
+; ADDRESS_ACLR_B                     ; NONE                       ; Untyped                              ;
+; OUTDATA_ACLR_B                     ; NONE                       ; Untyped                              ;
+; RDCONTROL_ACLR_B                   ; NONE                       ; Untyped                              ;
+; BYTEENA_ACLR_B                     ; NONE                       ; Untyped                              ;
+; WIDTH_BYTEENA_A                    ; 1                          ; Signed Integer                       ;
+; WIDTH_BYTEENA_B                    ; 1                          ; Untyped                              ;
+; RAM_BLOCK_TYPE                     ; AUTO                       ; Untyped                              ;
+; BYTE_SIZE                          ; 8                          ; Untyped                              ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                  ; Untyped                              ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ       ; Untyped                              ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ       ; Untyped                              ;
+; INIT_FILE                          ; TRISCRAMspring2021data.hex ; Untyped                              ;
+; INIT_FILE_LAYOUT                   ; PORT_A                     ; Untyped                              ;
+; MAXIMUM_DEPTH                      ; 0                          ; Untyped                              ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS                     ; Untyped                              ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                     ; Untyped                              ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS                     ; Untyped                              ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                     ; Untyped                              ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN            ; Untyped                              ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN            ; Untyped                              ;
+; ENABLE_ECC                         ; FALSE                      ; Untyped                              ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                      ; Untyped                              ;
+; WIDTH_ECCSTATUS                    ; 3                          ; Untyped                              ;
+; DEVICE_FAMILY                      ; MAX 10                     ; Untyped                              ;
+; CBXI_PARAMETER                     ; altsyncram_73d1            ; Untyped                              ;
++------------------------------------+----------------------------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ControlUnit:inst|triscFSM1:inst ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; A              ; 00000 ; Unsigned Binary                                     ;
+; B              ; 00001 ; Unsigned Binary                                     ;
+; C              ; 00010 ; Unsigned Binary                                     ;
+; D              ; 00011 ; Unsigned Binary                                     ;
+; E              ; 00100 ; Unsigned Binary                                     ;
+; F              ; 00101 ; Unsigned Binary                                     ;
+; G              ; 00110 ; Unsigned Binary                                     ;
+; H              ; 00111 ; Unsigned Binary                                     ;
+; I              ; 01000 ; Unsigned Binary                                     ;
+; J              ; 01001 ; Unsigned Binary                                     ;
+; K              ; 01010 ; Unsigned Binary                                     ;
+; L              ; 01011 ; Unsigned Binary                                     ;
+; M              ; 01100 ; Unsigned Binary                                     ;
+; N              ; 01101 ; Unsigned Binary                                     ;
+; O              ; 01110 ; Unsigned Binary                                     ;
+; P              ; 01111 ; Unsigned Binary                                     ;
+; Q              ; 10000 ; Unsigned Binary                                     ;
+; R              ; 10001 ; Unsigned Binary                                     ;
+; S              ; 10010 ; Unsigned Binary                                     ;
+; T              ; 10011 ; Unsigned Binary                                     ;
+; U              ; 10100 ; Unsigned Binary                                     ;
+; V              ; 10101 ; Unsigned Binary                                     ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                                      ;
++-------------------------------------------+-----------------------------------------------------------+
+; Name                                      ; Value                                                     ;
++-------------------------------------------+-----------------------------------------------------------+
+; Number of entity instances                ; 1                                                         ;
+; Entity Instance                           ; TRISCRAMspring2021:inst12|altsyncram:altsyncram_component ;
+;     -- OPERATION_MODE                     ; SINGLE_PORT                                               ;
+;     -- WIDTH_A                            ; 8                                                         ;
+;     -- NUMWORDS_A                         ; 16                                                        ;
+;     -- OUTDATA_REG_A                      ; CLOCK0                                                    ;
+;     -- WIDTH_B                            ; 1                                                         ;
+;     -- NUMWORDS_B                         ; 1                                                         ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                    ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                              ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                      ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                 ;
++-------------------------------------------+-----------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 44                          ;
+; cycloneiii_ff         ; 34                          ;
+;     CLR               ; 30                          ;
+;     plain             ; 4                           ;
+; cycloneiii_lcell_comb ; 149                         ;
+;     normal            ; 149                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 5                           ;
+;         2 data inputs ; 30                          ;
+;         3 data inputs ; 54                          ;
+;         4 data inputs ; 59                          ;
+; cycloneiii_ram_block  ; 8                           ;
+;                       ;                             ;
+; Max LUT depth         ; 5.00                        ;
+; Average LUT depth     ; 2.93                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+    Info: Processing started: Fri Jun 18 00:38:00 2021
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off TRISC -c TRISC
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file /users/justu/desktop/past classes/spring 2021/cse 2441/register/output_files/accumulator.bdf
+    Info (12023): Found entity 1: Accumulator
+Info (12021): Found 1 design units, including 1 entities, in source file /users/justu/desktop/past classes/spring 2021/cse 2441/blank/flagregister.bdf
+    Info (12023): Found entity 1: FlagRegister
+Info (12021): Found 1 design units, including 1 entities, in source file /users/justu/desktop/past classes/spring 2021/cse 2441/blank/block2.bdf
+    Info (12023): Found entity 1: Block2
+Info (12021): Found 1 design units, including 1 entities, in source file /users/justu/desktop/past classes/spring 2021/cse 2441/twoscomplement/twoscomplement.v
+    Info (12023): Found entity 1: TwosComplement File: C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/TwosComplement/TwosComplement.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/justu/desktop/past classes/spring 2021/cse 2441/ripplecarryadder/ripplecarryadder.bdf
+    Info (12023): Found entity 1: RippleCarryAdder
+Info (12021): Found 1 design units, including 1 entities, in source file /users/justu/desktop/past classes/spring 2021/cse 2441/register/piporegister2.bdf
+    Info (12023): Found entity 1: pipoRegister2
+Info (12021): Found 1 design units, including 1 entities, in source file /users/justu/desktop/past classes/spring 2021/cse 2441/register/piporegister.bdf
+    Info (12023): Found entity 1: pipoRegister
+Info (12021): Found 1 design units, including 1 entities, in source file /users/justu/desktop/past classes/spring 2021/cse 2441/lab10/labten.v
+    Info (12023): Found entity 1: LabTen File: C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/Lab10/LabTen.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/justu/desktop/past classes/spring 2021/cse 2441/lab9ram/lab9ram/block1.bdf
+    Info (12023): Found entity 1: Block1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/justu/desktop/past classes/spring 2021/cse 2441/full adder/fulladder.bdf
+    Info (12023): Found entity 1: FullAdder
+Info (12021): Found 1 design units, including 1 entities, in source file /users/justu/desktop/past classes/spring 2021/cse 2441/counter/counter.bdf
+    Info (12023): Found entity 1: Counter
+Info (12021): Found 1 design units, including 1 entities, in source file /users/justu/desktop/past classes/spring 2021/cse 2441/controlunit/controlunit.bdf
+    Info (12023): Found entity 1: ControlUnit
+Info (12021): Found 1 design units, including 1 entities, in source file /users/justu/desktop/past classes/spring 2021/cse 2441/controller/triscfsm1.v
+    Info (12023): Found entity 1: triscFSM1 File: C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/Controller/triscFSM1.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/justu/desktop/past classes/spring 2021/cse 2441/bcdtoseven/bcdtoseven.v
+    Info (12023): Found entity 1: BcdToSeven File: C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/BcdToSeven/BcdToSeven.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/justu/desktop/past classes/spring 2021/cse 2441/alu/multiplexer421.bdf
+    Info (12023): Found entity 1: Multiplexer421
+Info (12021): Found 1 design units, including 1 entities, in source file /users/justu/desktop/past classes/spring 2021/cse 2441/alu/aluselection.bdf
+    Info (12023): Found entity 1: ALUSelection
+Info (12021): Found 1 design units, including 1 entities, in source file /users/justu/desktop/past classes/spring 2021/cse 2441/alu/alu.bdf
+    Info (12023): Found entity 1: ALU
+Info (12021): Found 1 design units, including 1 entities, in source file /users/justu/desktop/past classes/spring 2021/cse 2441/alu/addersubtractorovr.bdf
+    Info (12023): Found entity 1: AdderSubtractorOVR
+Info (12021): Found 1 design units, including 1 entities, in source file /users/justu/desktop/past classes/spring 2021/cse 2441/alu/4bitxor.bdf
+    Info (12023): Found entity 1: 4BitXOR
+Info (12021): Found 1 design units, including 1 entities, in source file /users/justu/desktop/past classes/spring 2021/cse 2441/alu/4bitand.bdf
+    Info (12023): Found entity 1: 4BitAND
+Info (12021): Found 1 design units, including 1 entities, in source file /users/justu/desktop/past classes/spring 2021/cse 2441/triscramspring2021/triscramspring2021.v
+    Info (12023): Found entity 1: TRISCRAMspring2021 File: C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/TRISCRAMspring2021/TRISCRAMspring2021.v Line: 39
+Info (12021): Found 1 design units, including 1 entities, in source file trisc.bdf
+    Info (12023): Found entity 1: TRISC
+Info (12127): Elaborating entity "TRISC" for the top level hierarchy
+Info (12128): Elaborating entity "BcdToSeven" for hierarchy "BcdToSeven:inst1"
+Info (12128): Elaborating entity "TRISCRAMspring2021" for hierarchy "TRISCRAMspring2021:inst12"
+Info (12128): Elaborating entity "altsyncram" for hierarchy "TRISCRAMspring2021:inst12|altsyncram:altsyncram_component" File: C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/TRISCRAMspring2021/TRISCRAMspring2021.v Line: 85
+Info (12130): Elaborated megafunction instantiation "TRISCRAMspring2021:inst12|altsyncram:altsyncram_component" File: C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/TRISCRAMspring2021/TRISCRAMspring2021.v Line: 85
+Info (12133): Instantiated megafunction "TRISCRAMspring2021:inst12|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/TRISCRAMspring2021/TRISCRAMspring2021.v Line: 85
+    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
+    Info (12134): Parameter "init_file" = "TRISCRAMspring2021data.hex"
+    Info (12134): Parameter "intended_device_family" = "Cyclone II"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+    Info (12134): Parameter "numwords_a" = "16"
+    Info (12134): Parameter "operation_mode" = "SINGLE_PORT"
+    Info (12134): Parameter "outdata_aclr_a" = "NONE"
+    Info (12134): Parameter "outdata_reg_a" = "CLOCK0"
+    Info (12134): Parameter "power_up_uninitialized" = "FALSE"
+    Info (12134): Parameter "widthad_a" = "4"
+    Info (12134): Parameter "width_a" = "8"
+    Info (12134): Parameter "width_byteena_a" = "1"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_73d1.tdf
+    Info (12023): Found entity 1: altsyncram_73d1 File: C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/TRISC-Final/db/altsyncram_73d1.tdf Line: 27
+Info (12128): Elaborating entity "altsyncram_73d1" for hierarchy "TRISCRAMspring2021:inst12|altsyncram:altsyncram_component|altsyncram_73d1:auto_generated" File: c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
+Info (12128): Elaborating entity "ControlUnit" for hierarchy "ControlUnit:inst"
+Info (12128): Elaborating entity "triscFSM1" for hierarchy "ControlUnit:inst|triscFSM1:inst"
+Warning (10240): Verilog HDL Always Construct warning at triscFSM1.v(9): inferring latch(es) for variable "nextstate", which holds its previous value in one or more paths through the always construct File: C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/Controller/triscFSM1.v Line: 9
+Info (10041): Inferred latch for "nextstate.V" at triscFSM1.v(9) File: C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/Controller/triscFSM1.v Line: 9
+Info (10041): Inferred latch for "nextstate.U" at triscFSM1.v(9) File: C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/Controller/triscFSM1.v Line: 9
+Info (10041): Inferred latch for "nextstate.T" at triscFSM1.v(9) File: C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/Controller/triscFSM1.v Line: 9
+Info (10041): Inferred latch for "nextstate.S" at triscFSM1.v(9) File: C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/Controller/triscFSM1.v Line: 9
+Info (10041): Inferred latch for "nextstate.R" at triscFSM1.v(9) File: C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/Controller/triscFSM1.v Line: 9
+Info (10041): Inferred latch for "nextstate.Q" at triscFSM1.v(9) File: C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/Controller/triscFSM1.v Line: 9
+Info (10041): Inferred latch for "nextstate.P" at triscFSM1.v(9) File: C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/Controller/triscFSM1.v Line: 9
+Info (10041): Inferred latch for "nextstate.O" at triscFSM1.v(9) File: C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/Controller/triscFSM1.v Line: 9
+Info (10041): Inferred latch for "nextstate.N" at triscFSM1.v(9) File: C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/Controller/triscFSM1.v Line: 9
+Info (10041): Inferred latch for "nextstate.M" at triscFSM1.v(9) File: C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/Controller/triscFSM1.v Line: 9
+Info (10041): Inferred latch for "nextstate.L" at triscFSM1.v(9) File: C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/Controller/triscFSM1.v Line: 9
+Info (10041): Inferred latch for "nextstate.K" at triscFSM1.v(9) File: C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/Controller/triscFSM1.v Line: 9
+Info (10041): Inferred latch for "nextstate.J" at triscFSM1.v(9) File: C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/Controller/triscFSM1.v Line: 9
+Info (10041): Inferred latch for "nextstate.I" at triscFSM1.v(9) File: C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/Controller/triscFSM1.v Line: 9
+Info (10041): Inferred latch for "nextstate.H" at triscFSM1.v(9) File: C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/Controller/triscFSM1.v Line: 9
+Info (10041): Inferred latch for "nextstate.G" at triscFSM1.v(9) File: C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/Controller/triscFSM1.v Line: 9
+Info (10041): Inferred latch for "nextstate.F" at triscFSM1.v(9) File: C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/Controller/triscFSM1.v Line: 9
+Info (10041): Inferred latch for "nextstate.E" at triscFSM1.v(9) File: C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/Controller/triscFSM1.v Line: 9
+Info (10041): Inferred latch for "nextstate.D" at triscFSM1.v(9) File: C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/Controller/triscFSM1.v Line: 9
+Info (10041): Inferred latch for "nextstate.C" at triscFSM1.v(9) File: C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/Controller/triscFSM1.v Line: 9
+Info (10041): Inferred latch for "nextstate.B" at triscFSM1.v(9) File: C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/Controller/triscFSM1.v Line: 9
+Info (10041): Inferred latch for "nextstate.A" at triscFSM1.v(9) File: C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/Controller/triscFSM1.v Line: 9
+Info (12128): Elaborating entity "LabTen" for hierarchy "ControlUnit:inst|LabTen:inst2"
+Warning (10270): Verilog HDL Case Statement warning at LabTen.v(5): incomplete case statement has no default case item File: C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/Lab10/LabTen.v Line: 5
+Warning (10240): Verilog HDL Always Construct warning at LabTen.v(4): inferring latch(es) for variable "LDA", which holds its previous value in one or more paths through the always construct File: C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/Lab10/LabTen.v Line: 4
+Warning (10240): Verilog HDL Always Construct warning at LabTen.v(4): inferring latch(es) for variable "STA", which holds its previous value in one or more paths through the always construct File: C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/Lab10/LabTen.v Line: 4
+Warning (10240): Verilog HDL Always Construct warning at LabTen.v(4): inferring latch(es) for variable "ADD", which holds its previous value in one or more paths through the always construct File: C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/Lab10/LabTen.v Line: 4
+Warning (10240): Verilog HDL Always Construct warning at LabTen.v(4): inferring latch(es) for variable "SUB", which holds its previous value in one or more paths through the always construct File: C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/Lab10/LabTen.v Line: 4
+Warning (10240): Verilog HDL Always Construct warning at LabTen.v(4): inferring latch(es) for variable "XOR", which holds its previous value in one or more paths through the always construct File: C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/Lab10/LabTen.v Line: 4
+Warning (10240): Verilog HDL Always Construct warning at LabTen.v(4): inferring latch(es) for variable "INC", which holds its previous value in one or more paths through the always construct File: C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/Lab10/LabTen.v Line: 4
+Warning (10240): Verilog HDL Always Construct warning at LabTen.v(4): inferring latch(es) for variable "CLR", which holds its previous value in one or more paths through the always construct File: C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/Lab10/LabTen.v Line: 4
+Warning (10240): Verilog HDL Always Construct warning at LabTen.v(4): inferring latch(es) for variable "JMP", which holds its previous value in one or more paths through the always construct File: C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/Lab10/LabTen.v Line: 4
+Warning (10240): Verilog HDL Always Construct warning at LabTen.v(4): inferring latch(es) for variable "JPZ", which holds its previous value in one or more paths through the always construct File: C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/Lab10/LabTen.v Line: 4
+Warning (10240): Verilog HDL Always Construct warning at LabTen.v(4): inferring latch(es) for variable "JPN", which holds its previous value in one or more paths through the always construct File: C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/Lab10/LabTen.v Line: 4
+Warning (10240): Verilog HDL Always Construct warning at LabTen.v(4): inferring latch(es) for variable "HLT", which holds its previous value in one or more paths through the always construct File: C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/Lab10/LabTen.v Line: 4
+Info (10041): Inferred latch for "HLT" at LabTen.v(4) File: C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/Lab10/LabTen.v Line: 4
+Info (10041): Inferred latch for "JPN" at LabTen.v(4) File: C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/Lab10/LabTen.v Line: 4
+Info (10041): Inferred latch for "JPZ" at LabTen.v(4) File: C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/Lab10/LabTen.v Line: 4
+Info (10041): Inferred latch for "JMP" at LabTen.v(4) File: C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/Lab10/LabTen.v Line: 4
+Info (10041): Inferred latch for "CLR" at LabTen.v(4) File: C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/Lab10/LabTen.v Line: 4
+Info (10041): Inferred latch for "INC" at LabTen.v(4) File: C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/Lab10/LabTen.v Line: 4
+Info (10041): Inferred latch for "XOR" at LabTen.v(4) File: C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/Lab10/LabTen.v Line: 4
+Info (10041): Inferred latch for "SUB" at LabTen.v(4) File: C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/Lab10/LabTen.v Line: 4
+Info (10041): Inferred latch for "ADD" at LabTen.v(4) File: C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/Lab10/LabTen.v Line: 4
+Info (10041): Inferred latch for "STA" at LabTen.v(4) File: C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/Lab10/LabTen.v Line: 4
+Info (10041): Inferred latch for "LDA" at LabTen.v(4) File: C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/Lab10/LabTen.v Line: 4
+Info (12128): Elaborating entity "pipoRegister2" for hierarchy "pipoRegister2:inst9"
+Info (12128): Elaborating entity "74175" for hierarchy "pipoRegister2:inst9|74175:inst9"
+Info (12130): Elaborated megafunction instantiation "pipoRegister2:inst9|74175:inst9"
+Info (12128): Elaborating entity "Block2" for hierarchy "Block2:inst17"
+Info (12128): Elaborating entity "Counter" for hierarchy "Counter:inst6"
+Warning (275011): Block or symbol "VCC" of instance "inst2" overlaps another block or symbol
+Info (12128): Elaborating entity "74193" for hierarchy "Counter:inst6|74193:inst"
+Info (12130): Elaborated megafunction instantiation "Counter:inst6|74193:inst"
+Info (12128): Elaborating entity "Accumulator" for hierarchy "Accumulator:inst15"
+Info (12128): Elaborating entity "ALU" for hierarchy "ALU:inst18"
+Info (12128): Elaborating entity "ALUSelection" for hierarchy "ALU:inst18|ALUSelection:inst4"
+Info (12128): Elaborating entity "Multiplexer421" for hierarchy "ALU:inst18|ALUSelection:inst4|Multiplexer421:inst"
+Info (12128): Elaborating entity "4BitAND" for hierarchy "ALU:inst18|4BitAND:inst"
+Info (12128): Elaborating entity "4BitXOR" for hierarchy "ALU:inst18|4BitXOR:inst2"
+Info (12128): Elaborating entity "AdderSubtractorOVR" for hierarchy "ALU:inst18|AdderSubtractorOVR:inst3"
+Info (12128): Elaborating entity "RippleCarryAdder" for hierarchy "ALU:inst18|AdderSubtractorOVR:inst3|RippleCarryAdder:inst"
+Info (12128): Elaborating entity "FullAdder" for hierarchy "ALU:inst18|AdderSubtractorOVR:inst3|RippleCarryAdder:inst|FullAdder:inst"
+Warning (13012): Latch ControlUnit:inst|LabTen:inst2|JMP has unsafe behavior File: C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/Lab10/LabTen.v Line: 3
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal pipoRegister2:inst9|74175:inst9|16
+Warning (13012): Latch ControlUnit:inst|LabTen:inst2|CLR has unsafe behavior File: C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/Lab10/LabTen.v Line: 3
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal pipoRegister2:inst9|74175:inst9|16
+Warning (13012): Latch ControlUnit:inst|LabTen:inst2|INC has unsafe behavior File: C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/Lab10/LabTen.v Line: 3
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal pipoRegister2:inst9|74175:inst9|16
+Warning (13012): Latch ControlUnit:inst|LabTen:inst2|ADD has unsafe behavior File: C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/Lab10/LabTen.v Line: 3
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal pipoRegister2:inst9|74175:inst9|16
+Warning (13012): Latch ControlUnit:inst|LabTen:inst2|STA has unsafe behavior File: C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/Lab10/LabTen.v Line: 3
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal pipoRegister2:inst9|74175:inst9|16
+Warning (13012): Latch ControlUnit:inst|LabTen:inst2|LDA has unsafe behavior File: C:/Users/justu/Desktop/PAST CLASSES/Spring 2021/CSE 2441/Lab10/LabTen.v Line: 3
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal pipoRegister2:inst9|74175:inst9|16
+Warning (13004): Presettable and clearable registers converted to equivalent circuits with latches. Registers power-up to an undefined state, and DEVCLRn places the registers in an undefined state.
+    Warning (13310): Register "Accumulator:inst15|Counter:inst|74193:inst|26" is converted into an equivalent circuit using register "Accumulator:inst15|Counter:inst|74193:inst|26~_emulated" and latch "Accumulator:inst15|Counter:inst|74193:inst|26~1"
+    Warning (13310): Register "Accumulator:inst15|Counter:inst|74193:inst|25" is converted into an equivalent circuit using register "Accumulator:inst15|Counter:inst|74193:inst|25~_emulated" and latch "Accumulator:inst15|Counter:inst|74193:inst|25~1"
+    Warning (13310): Register "Accumulator:inst15|Counter:inst|74193:inst|24" is converted into an equivalent circuit using register "Accumulator:inst15|Counter:inst|74193:inst|24~_emulated" and latch "Accumulator:inst15|Counter:inst|74193:inst|24~1"
+    Warning (13310): Register "Accumulator:inst15|Counter:inst|74193:inst|23" is converted into an equivalent circuit using register "Accumulator:inst15|Counter:inst|74193:inst|23~_emulated" and latch "Accumulator:inst15|Counter:inst|74193:inst|23~1"
+    Warning (13310): Register "Counter:inst6|74193:inst|26" is converted into an equivalent circuit using register "Counter:inst6|74193:inst|26~_emulated" and latch "Counter:inst6|74193:inst|26~1"
+    Warning (13310): Register "Counter:inst6|74193:inst|25" is converted into an equivalent circuit using register "Counter:inst6|74193:inst|25~_emulated" and latch "Counter:inst6|74193:inst|25~1"
+    Warning (13310): Register "Counter:inst6|74193:inst|24" is converted into an equivalent circuit using register "Counter:inst6|74193:inst|24~_emulated" and latch "Counter:inst6|74193:inst|24~1"
+    Warning (13310): Register "Counter:inst6|74193:inst|23" is converted into an equivalent circuit using register "Counter:inst6|74193:inst|23~_emulated" and latch "Counter:inst6|74193:inst|23~1"
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "Cout10" is stuck at GND
+    Warning (13410): Pin "Cout14" is stuck at GND
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 5 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 222 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 42 output pins
+    Info (21061): Implemented 170 logic cells
+    Info (21064): Implemented 8 RAM segments
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 39 warnings
+    Info: Peak virtual memory: 4786 megabytes
+    Info: Processing ended: Fri Jun 18 00:38:11 2021
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:23
+
+

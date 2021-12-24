@@ -1,0 +1,1278 @@
+TimeQuest Timing Analyzer report for ControlUnit
+Tue May 04 17:36:41 2021
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'LabTen:inst2|ADD'
+ 12. Slow Model Setup: 'CLOCK'
+ 13. Slow Model Setup: 'A'
+ 14. Slow Model Hold: 'LabTen:inst2|ADD'
+ 15. Slow Model Hold: 'A'
+ 16. Slow Model Hold: 'CLOCK'
+ 17. Slow Model Minimum Pulse Width: 'A'
+ 18. Slow Model Minimum Pulse Width: 'CLOCK'
+ 19. Slow Model Minimum Pulse Width: 'LabTen:inst2|ADD'
+ 20. Setup Times
+ 21. Hold Times
+ 22. Clock to Output Times
+ 23. Minimum Clock to Output Times
+ 24. Fast Model Setup Summary
+ 25. Fast Model Hold Summary
+ 26. Fast Model Recovery Summary
+ 27. Fast Model Removal Summary
+ 28. Fast Model Minimum Pulse Width Summary
+ 29. Fast Model Setup: 'CLOCK'
+ 30. Fast Model Setup: 'A'
+ 31. Fast Model Setup: 'LabTen:inst2|ADD'
+ 32. Fast Model Hold: 'LabTen:inst2|ADD'
+ 33. Fast Model Hold: 'A'
+ 34. Fast Model Hold: 'CLOCK'
+ 35. Fast Model Minimum Pulse Width: 'A'
+ 36. Fast Model Minimum Pulse Width: 'CLOCK'
+ 37. Fast Model Minimum Pulse Width: 'LabTen:inst2|ADD'
+ 38. Setup Times
+ 39. Hold Times
+ 40. Clock to Output Times
+ 41. Minimum Clock to Output Times
+ 42. Multicorner Timing Analysis Summary
+ 43. Setup Times
+ 44. Hold Times
+ 45. Clock to Output Times
+ 46. Minimum Clock to Output Times
+ 47. Setup Transfers
+ 48. Hold Transfers
+ 49. Report TCCS
+ 50. Report RSKM
+ 51. Unconstrained Paths
+ 52. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; ControlUnit                                                       ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C20F484C7                                                      ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 6      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                             ;
++------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------------+
+; Clock Name       ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets              ;
++------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------------+
+; A                ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { A }                ;
+; CLOCK            ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { CLOCK }            ;
+; LabTen:inst2|ADD ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { LabTen:inst2|ADD } ;
++------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Slow Model Fmax Summary                                                                                   ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note                                                          ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; 487.33 MHz ; 380.08 MHz      ; A          ; limit due to minimum period restriction (max I/O toggle rate) ;
++------------+-----------------+------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++-------------------------------------------+
+; Slow Model Setup Summary                  ;
++------------------+--------+---------------+
+; Clock            ; Slack  ; End Point TNS ;
++------------------+--------+---------------+
+; LabTen:inst2|ADD ; -1.048 ; -1.214        ;
+; CLOCK            ; -0.762 ; -8.395        ;
+; A                ; -0.526 ; -3.023        ;
++------------------+--------+---------------+
+
+
++-------------------------------------------+
+; Slow Model Hold Summary                   ;
++------------------+--------+---------------+
+; Clock            ; Slack  ; End Point TNS ;
++------------------+--------+---------------+
+; LabTen:inst2|ADD ; -0.882 ; -8.898        ;
+; A                ; -0.192 ; -1.095        ;
+; CLOCK            ; 1.097  ; 0.000         ;
++------------------+--------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++-------------------------------------------+
+; Slow Model Minimum Pulse Width Summary    ;
++------------------+--------+---------------+
+; Clock            ; Slack  ; End Point TNS ;
++------------------+--------+---------------+
+; A                ; -1.631 ; -1.631        ;
+; CLOCK            ; -1.469 ; -28.353       ;
+; LabTen:inst2|ADD ; 0.500  ; 0.000         ;
++------------------+--------+---------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'LabTen:inst2|ADD'                                                                                                        ;
++--------+------------------------+--------------------------------+--------------+------------------+--------------+------------+------------+
+; Slack  ; From Node              ; To Node                        ; Launch Clock ; Latch Clock      ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------+--------------------------------+--------------+------------------+--------------+------------+------------+
+; -1.048 ; triscFSM1:inst|state.F ; triscFSM1:inst|nextstate.B_875 ; CLOCK        ; LabTen:inst2|ADD ; 1.000        ; 1.704      ; 2.397      ;
+; -0.776 ; triscFSM1:inst|state.G ; triscFSM1:inst|nextstate.B_875 ; CLOCK        ; LabTen:inst2|ADD ; 1.000        ; 1.704      ; 2.125      ;
+; -0.768 ; triscFSM1:inst|state.V ; triscFSM1:inst|nextstate.B_875 ; CLOCK        ; LabTen:inst2|ADD ; 1.000        ; 1.455      ; 1.868      ;
+; -0.474 ; triscFSM1:inst|state.O ; triscFSM1:inst|nextstate.B_875 ; CLOCK        ; LabTen:inst2|ADD ; 1.000        ; 1.455      ; 1.574      ;
+; -0.427 ; triscFSM1:inst|state.A ; triscFSM1:inst|nextstate.B_875 ; CLOCK        ; LabTen:inst2|ADD ; 1.000        ; 1.704      ; 1.776      ;
+; -0.332 ; triscFSM1:inst|state.L ; triscFSM1:inst|nextstate.B_875 ; CLOCK        ; LabTen:inst2|ADD ; 1.000        ; 1.704      ; 1.681      ;
+; -0.239 ; triscFSM1:inst|state.H ; triscFSM1:inst|nextstate.B_875 ; CLOCK        ; LabTen:inst2|ADD ; 1.000        ; 1.704      ; 1.588      ;
+; -0.166 ; triscFSM1:inst|state.J ; triscFSM1:inst|nextstate.K_716 ; CLOCK        ; LabTen:inst2|ADD ; 1.000        ; 1.700      ; 0.820      ;
+; 0.054  ; triscFSM1:inst|state.S ; triscFSM1:inst|nextstate.T_551 ; CLOCK        ; LabTen:inst2|ADD ; 1.000        ; 1.288      ; 0.962      ;
+; 0.056  ; triscFSM1:inst|state.M ; triscFSM1:inst|nextstate.N_662 ; CLOCK        ; LabTen:inst2|ADD ; 1.000        ; 1.291      ; 0.970      ;
+; 0.124  ; triscFSM1:inst|state.P ; triscFSM1:inst|nextstate.Q_608 ; CLOCK        ; LabTen:inst2|ADD ; 1.000        ; 1.372      ; 0.820      ;
+; 0.166  ; triscFSM1:inst|state.T ; triscFSM1:inst|nextstate.U_532 ; CLOCK        ; LabTen:inst2|ADD ; 1.000        ; 1.406      ; 0.814      ;
+; 0.190  ; triscFSM1:inst|state.Q ; triscFSM1:inst|nextstate.R_589 ; CLOCK        ; LabTen:inst2|ADD ; 1.000        ; 1.371      ; 0.821      ;
+; 0.190  ; triscFSM1:inst|state.R ; triscFSM1:inst|nextstate.S_570 ; CLOCK        ; LabTen:inst2|ADD ; 1.000        ; 1.405      ; 0.819      ;
+; 0.231  ; triscFSM1:inst|state.I ; triscFSM1:inst|nextstate.J_735 ; CLOCK        ; LabTen:inst2|ADD ; 1.000        ; 1.699      ; 0.820      ;
+; 0.250  ; triscFSM1:inst|state.C ; triscFSM1:inst|nextstate.D_837 ; CLOCK        ; LabTen:inst2|ADD ; 1.000        ; 1.700      ; 0.819      ;
+; 0.304  ; triscFSM1:inst|state.B ; triscFSM1:inst|nextstate.C_856 ; CLOCK        ; LabTen:inst2|ADD ; 1.000        ; 1.493      ; 0.960      ;
+; 0.330  ; triscFSM1:inst|state.N ; triscFSM1:inst|nextstate.O_643 ; CLOCK        ; LabTen:inst2|ADD ; 1.000        ; 1.287      ; 0.961      ;
+; 0.419  ; triscFSM1:inst|state.U ; triscFSM1:inst|nextstate.V_513 ; CLOCK        ; LabTen:inst2|ADD ; 1.000        ; 1.406      ; 0.810      ;
+; 0.521  ; triscFSM1:inst|state.K ; triscFSM1:inst|nextstate.L_697 ; CLOCK        ; LabTen:inst2|ADD ; 1.000        ; 1.703      ; 0.825      ;
+; 0.753  ; triscFSM1:inst|state.D ; triscFSM1:inst|nextstate.E_818 ; CLOCK        ; LabTen:inst2|ADD ; 1.000        ; 1.700      ; 0.818      ;
++--------+------------------------+--------------------------------+--------------+------------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'CLOCK'                                                                                                                  ;
++--------+--------------------------------+------------------------+------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                      ; To Node                ; Launch Clock     ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------------+------------------------+------------------+-------------+--------------+------------+------------+
+; -0.762 ; triscFSM1:inst|nextstate.B_875 ; triscFSM1:inst|state.B ; LabTen:inst2|ADD ; CLOCK       ; 1.000        ; -1.704     ; 0.096      ;
+; -0.761 ; triscFSM1:inst|nextstate.L_697 ; triscFSM1:inst|state.L ; LabTen:inst2|ADD ; CLOCK       ; 1.000        ; -1.703     ; 0.096      ;
+; -0.758 ; triscFSM1:inst|nextstate.K_716 ; triscFSM1:inst|state.K ; LabTen:inst2|ADD ; CLOCK       ; 1.000        ; -1.700     ; 0.096      ;
+; -0.758 ; triscFSM1:inst|nextstate.D_837 ; triscFSM1:inst|state.D ; LabTen:inst2|ADD ; CLOCK       ; 1.000        ; -1.700     ; 0.096      ;
+; -0.758 ; triscFSM1:inst|nextstate.E_818 ; triscFSM1:inst|state.E ; LabTen:inst2|ADD ; CLOCK       ; 1.000        ; -1.700     ; 0.096      ;
+; -0.757 ; triscFSM1:inst|nextstate.J_735 ; triscFSM1:inst|state.J ; LabTen:inst2|ADD ; CLOCK       ; 1.000        ; -1.699     ; 0.096      ;
+; -0.551 ; triscFSM1:inst|nextstate.C_856 ; triscFSM1:inst|state.C ; LabTen:inst2|ADD ; CLOCK       ; 1.000        ; -1.493     ; 0.096      ;
+; -0.464 ; triscFSM1:inst|nextstate.U_532 ; triscFSM1:inst|state.U ; LabTen:inst2|ADD ; CLOCK       ; 1.000        ; -1.406     ; 0.096      ;
+; -0.464 ; triscFSM1:inst|nextstate.V_513 ; triscFSM1:inst|state.V ; LabTen:inst2|ADD ; CLOCK       ; 1.000        ; -1.406     ; 0.096      ;
+; -0.463 ; triscFSM1:inst|nextstate.S_570 ; triscFSM1:inst|state.S ; LabTen:inst2|ADD ; CLOCK       ; 1.000        ; -1.405     ; 0.096      ;
+; -0.430 ; triscFSM1:inst|nextstate.Q_608 ; triscFSM1:inst|state.Q ; LabTen:inst2|ADD ; CLOCK       ; 1.000        ; -1.372     ; 0.096      ;
+; -0.429 ; triscFSM1:inst|nextstate.R_589 ; triscFSM1:inst|state.R ; LabTen:inst2|ADD ; CLOCK       ; 1.000        ; -1.371     ; 0.096      ;
+; -0.349 ; triscFSM1:inst|nextstate.N_662 ; triscFSM1:inst|state.N ; LabTen:inst2|ADD ; CLOCK       ; 1.000        ; -1.291     ; 0.096      ;
+; -0.346 ; triscFSM1:inst|nextstate.T_551 ; triscFSM1:inst|state.T ; LabTen:inst2|ADD ; CLOCK       ; 1.000        ; -1.288     ; 0.096      ;
+; -0.345 ; triscFSM1:inst|nextstate.O_643 ; triscFSM1:inst|state.O ; LabTen:inst2|ADD ; CLOCK       ; 1.000        ; -1.287     ; 0.096      ;
++--------+--------------------------------+------------------------+------------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'A'                                                                                       ;
++--------+-----------+------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+------------------+--------------+-------------+--------------+------------+------------+
+; -0.526 ; A         ; LabTen:inst2|CLR ; A            ; A           ; 0.500        ; 2.643      ; 2.467      ;
+; -0.524 ; A         ; LabTen:inst2|ADD ; A            ; A           ; 0.500        ; 2.647      ; 2.474      ;
+; -0.518 ; A         ; LabTen:inst2|INC ; A            ; A           ; 0.500        ; 2.644      ; 2.461      ;
+; -0.508 ; A         ; LabTen:inst2|JMP ; A            ; A           ; 0.500        ; 2.646      ; 2.456      ;
+; -0.491 ; A         ; LabTen:inst2|LDA ; A            ; A           ; 0.500        ; 2.644      ; 2.463      ;
+; -0.456 ; A         ; LabTen:inst2|STA ; A            ; A           ; 0.500        ; 2.646      ; 2.454      ;
+; -0.026 ; A         ; LabTen:inst2|CLR ; A            ; A           ; 1.000        ; 2.643      ; 2.467      ;
+; -0.024 ; A         ; LabTen:inst2|ADD ; A            ; A           ; 1.000        ; 2.647      ; 2.474      ;
+; -0.018 ; A         ; LabTen:inst2|INC ; A            ; A           ; 1.000        ; 2.644      ; 2.461      ;
+; -0.008 ; A         ; LabTen:inst2|JMP ; A            ; A           ; 1.000        ; 2.646      ; 2.456      ;
+; 0.009  ; A         ; LabTen:inst2|LDA ; A            ; A           ; 1.000        ; 2.644      ; 2.463      ;
+; 0.044  ; A         ; LabTen:inst2|STA ; A            ; A           ; 1.000        ; 2.646      ; 2.454      ;
++--------+-----------+------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'LabTen:inst2|ADD'                                                                                                         ;
++--------+------------------------+--------------------------------+--------------+------------------+--------------+------------+------------+
+; Slack  ; From Node              ; To Node                        ; Launch Clock ; Latch Clock      ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------+--------------------------------+--------------+------------------+--------------+------------+------------+
+; -0.882 ; triscFSM1:inst|state.D ; triscFSM1:inst|nextstate.E_818 ; CLOCK        ; LabTen:inst2|ADD ; 0.000        ; 1.700      ; 0.818      ;
+; -0.881 ; triscFSM1:inst|state.C ; triscFSM1:inst|nextstate.D_837 ; CLOCK        ; LabTen:inst2|ADD ; 0.000        ; 1.700      ; 0.819      ;
+; -0.880 ; triscFSM1:inst|state.J ; triscFSM1:inst|nextstate.K_716 ; CLOCK        ; LabTen:inst2|ADD ; 0.000        ; 1.700      ; 0.820      ;
+; -0.879 ; triscFSM1:inst|state.I ; triscFSM1:inst|nextstate.J_735 ; CLOCK        ; LabTen:inst2|ADD ; 0.000        ; 1.699      ; 0.820      ;
+; -0.878 ; triscFSM1:inst|state.K ; triscFSM1:inst|nextstate.L_697 ; CLOCK        ; LabTen:inst2|ADD ; 0.000        ; 1.703      ; 0.825      ;
+; -0.596 ; triscFSM1:inst|state.U ; triscFSM1:inst|nextstate.V_513 ; CLOCK        ; LabTen:inst2|ADD ; 0.000        ; 1.406      ; 0.810      ;
+; -0.592 ; triscFSM1:inst|state.T ; triscFSM1:inst|nextstate.U_532 ; CLOCK        ; LabTen:inst2|ADD ; 0.000        ; 1.406      ; 0.814      ;
+; -0.586 ; triscFSM1:inst|state.R ; triscFSM1:inst|nextstate.S_570 ; CLOCK        ; LabTen:inst2|ADD ; 0.000        ; 1.405      ; 0.819      ;
+; -0.552 ; triscFSM1:inst|state.P ; triscFSM1:inst|nextstate.Q_608 ; CLOCK        ; LabTen:inst2|ADD ; 0.000        ; 1.372      ; 0.820      ;
+; -0.550 ; triscFSM1:inst|state.Q ; triscFSM1:inst|nextstate.R_589 ; CLOCK        ; LabTen:inst2|ADD ; 0.000        ; 1.371      ; 0.821      ;
+; -0.533 ; triscFSM1:inst|state.B ; triscFSM1:inst|nextstate.C_856 ; CLOCK        ; LabTen:inst2|ADD ; 0.000        ; 1.493      ; 0.960      ;
+; -0.326 ; triscFSM1:inst|state.N ; triscFSM1:inst|nextstate.O_643 ; CLOCK        ; LabTen:inst2|ADD ; 0.000        ; 1.287      ; 0.961      ;
+; -0.326 ; triscFSM1:inst|state.S ; triscFSM1:inst|nextstate.T_551 ; CLOCK        ; LabTen:inst2|ADD ; 0.000        ; 1.288      ; 0.962      ;
+; -0.321 ; triscFSM1:inst|state.M ; triscFSM1:inst|nextstate.N_662 ; CLOCK        ; LabTen:inst2|ADD ; 0.000        ; 1.291      ; 0.970      ;
+; -0.116 ; triscFSM1:inst|state.H ; triscFSM1:inst|nextstate.B_875 ; CLOCK        ; LabTen:inst2|ADD ; 0.000        ; 1.704      ; 1.588      ;
+; -0.023 ; triscFSM1:inst|state.L ; triscFSM1:inst|nextstate.B_875 ; CLOCK        ; LabTen:inst2|ADD ; 0.000        ; 1.704      ; 1.681      ;
+; 0.072  ; triscFSM1:inst|state.A ; triscFSM1:inst|nextstate.B_875 ; CLOCK        ; LabTen:inst2|ADD ; 0.000        ; 1.704      ; 1.776      ;
+; 0.119  ; triscFSM1:inst|state.O ; triscFSM1:inst|nextstate.B_875 ; CLOCK        ; LabTen:inst2|ADD ; 0.000        ; 1.455      ; 1.574      ;
+; 0.413  ; triscFSM1:inst|state.V ; triscFSM1:inst|nextstate.B_875 ; CLOCK        ; LabTen:inst2|ADD ; 0.000        ; 1.455      ; 1.868      ;
+; 0.421  ; triscFSM1:inst|state.G ; triscFSM1:inst|nextstate.B_875 ; CLOCK        ; LabTen:inst2|ADD ; 0.000        ; 1.704      ; 2.125      ;
+; 0.693  ; triscFSM1:inst|state.F ; triscFSM1:inst|nextstate.B_875 ; CLOCK        ; LabTen:inst2|ADD ; 0.000        ; 1.704      ; 2.397      ;
++--------+------------------------+--------------------------------+--------------+------------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'A'                                                                                        ;
++--------+-----------+------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+------------------+--------------+-------------+--------------+------------+------------+
+; -0.192 ; A         ; LabTen:inst2|STA ; A            ; A           ; 0.000        ; 2.646      ; 2.454      ;
+; -0.190 ; A         ; LabTen:inst2|JMP ; A            ; A           ; 0.000        ; 2.646      ; 2.456      ;
+; -0.183 ; A         ; LabTen:inst2|INC ; A            ; A           ; 0.000        ; 2.644      ; 2.461      ;
+; -0.181 ; A         ; LabTen:inst2|LDA ; A            ; A           ; 0.000        ; 2.644      ; 2.463      ;
+; -0.176 ; A         ; LabTen:inst2|CLR ; A            ; A           ; 0.000        ; 2.643      ; 2.467      ;
+; -0.173 ; A         ; LabTen:inst2|ADD ; A            ; A           ; 0.000        ; 2.647      ; 2.474      ;
+; 0.308  ; A         ; LabTen:inst2|STA ; A            ; A           ; -0.500       ; 2.646      ; 2.454      ;
+; 0.310  ; A         ; LabTen:inst2|JMP ; A            ; A           ; -0.500       ; 2.646      ; 2.456      ;
+; 0.317  ; A         ; LabTen:inst2|INC ; A            ; A           ; -0.500       ; 2.644      ; 2.461      ;
+; 0.319  ; A         ; LabTen:inst2|LDA ; A            ; A           ; -0.500       ; 2.644      ; 2.463      ;
+; 0.324  ; A         ; LabTen:inst2|CLR ; A            ; A           ; -0.500       ; 2.643      ; 2.467      ;
+; 0.327  ; A         ; LabTen:inst2|ADD ; A            ; A           ; -0.500       ; 2.647      ; 2.474      ;
++--------+-----------+------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'CLOCK'                                                                                                                  ;
++-------+--------------------------------+------------------------+------------------+-------------+--------------+------------+------------+
+; Slack ; From Node                      ; To Node                ; Launch Clock     ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------+------------------------+------------------+-------------+--------------+------------+------------+
+; 1.097 ; triscFSM1:inst|nextstate.O_643 ; triscFSM1:inst|state.O ; LabTen:inst2|ADD ; CLOCK       ; 0.000        ; -1.287     ; 0.096      ;
+; 1.098 ; triscFSM1:inst|nextstate.T_551 ; triscFSM1:inst|state.T ; LabTen:inst2|ADD ; CLOCK       ; 0.000        ; -1.288     ; 0.096      ;
+; 1.101 ; triscFSM1:inst|nextstate.N_662 ; triscFSM1:inst|state.N ; LabTen:inst2|ADD ; CLOCK       ; 0.000        ; -1.291     ; 0.096      ;
+; 1.181 ; triscFSM1:inst|nextstate.R_589 ; triscFSM1:inst|state.R ; LabTen:inst2|ADD ; CLOCK       ; 0.000        ; -1.371     ; 0.096      ;
+; 1.182 ; triscFSM1:inst|nextstate.Q_608 ; triscFSM1:inst|state.Q ; LabTen:inst2|ADD ; CLOCK       ; 0.000        ; -1.372     ; 0.096      ;
+; 1.215 ; triscFSM1:inst|nextstate.S_570 ; triscFSM1:inst|state.S ; LabTen:inst2|ADD ; CLOCK       ; 0.000        ; -1.405     ; 0.096      ;
+; 1.216 ; triscFSM1:inst|nextstate.U_532 ; triscFSM1:inst|state.U ; LabTen:inst2|ADD ; CLOCK       ; 0.000        ; -1.406     ; 0.096      ;
+; 1.216 ; triscFSM1:inst|nextstate.V_513 ; triscFSM1:inst|state.V ; LabTen:inst2|ADD ; CLOCK       ; 0.000        ; -1.406     ; 0.096      ;
+; 1.303 ; triscFSM1:inst|nextstate.C_856 ; triscFSM1:inst|state.C ; LabTen:inst2|ADD ; CLOCK       ; 0.000        ; -1.493     ; 0.096      ;
+; 1.509 ; triscFSM1:inst|nextstate.J_735 ; triscFSM1:inst|state.J ; LabTen:inst2|ADD ; CLOCK       ; 0.000        ; -1.699     ; 0.096      ;
+; 1.510 ; triscFSM1:inst|nextstate.K_716 ; triscFSM1:inst|state.K ; LabTen:inst2|ADD ; CLOCK       ; 0.000        ; -1.700     ; 0.096      ;
+; 1.510 ; triscFSM1:inst|nextstate.D_837 ; triscFSM1:inst|state.D ; LabTen:inst2|ADD ; CLOCK       ; 0.000        ; -1.700     ; 0.096      ;
+; 1.510 ; triscFSM1:inst|nextstate.E_818 ; triscFSM1:inst|state.E ; LabTen:inst2|ADD ; CLOCK       ; 0.000        ; -1.700     ; 0.096      ;
+; 1.513 ; triscFSM1:inst|nextstate.L_697 ; triscFSM1:inst|state.L ; LabTen:inst2|ADD ; CLOCK       ; 0.000        ; -1.703     ; 0.096      ;
+; 1.514 ; triscFSM1:inst|nextstate.B_875 ; triscFSM1:inst|state.B ; LabTen:inst2|ADD ; CLOCK       ; 0.000        ; -1.704     ; 0.096      ;
++-------+--------------------------------+------------------------+------------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'A'                                                                      ;
++--------+--------------+----------------+------------------+-------+------------+-------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                  ;
++--------+--------------+----------------+------------------+-------+------------+-------------------------+
+; -1.631 ; 1.000        ; 2.631          ; Port Rate        ; A     ; Rise       ; A                       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; A     ; Rise       ; A|combout               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; A     ; Rise       ; A|combout               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; A     ; Rise       ; LabTen:inst2|ADD        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; A     ; Rise       ; LabTen:inst2|ADD        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; A     ; Rise       ; LabTen:inst2|CLR        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; A     ; Rise       ; LabTen:inst2|CLR        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; A     ; Rise       ; LabTen:inst2|INC        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; A     ; Rise       ; LabTen:inst2|INC        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; A     ; Rise       ; LabTen:inst2|JMP        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; A     ; Rise       ; LabTen:inst2|JMP        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; A     ; Rise       ; LabTen:inst2|LDA        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; A     ; Rise       ; LabTen:inst2|LDA        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; A     ; Rise       ; LabTen:inst2|STA        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; A     ; Rise       ; LabTen:inst2|STA        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; A     ; Rise       ; inst2|ADD|datac         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; A     ; Rise       ; inst2|ADD|datac         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; A     ; Rise       ; inst2|CLR|datac         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; A     ; Rise       ; inst2|CLR|datac         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; A     ; Rise       ; inst2|INC|datac         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; A     ; Rise       ; inst2|INC|datac         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; A     ; Rise       ; inst2|JMP|datac         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; A     ; Rise       ; inst2|JMP|datac         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; A     ; Rise       ; inst2|LDA|datac         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; A     ; Rise       ; inst2|LDA|datac         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; A     ; Rise       ; inst2|STA|datac         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; A     ; Rise       ; inst2|STA|datac         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; A     ; Rise       ; inst2|WideOr1~0|combout ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; A     ; Rise       ; inst2|WideOr1~0|combout ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; A     ; Rise       ; inst2|WideOr1~0|datad   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; A     ; Rise       ; inst2|WideOr1~0|datad   ;
++--------+--------------+----------------+------------------+-------+------------+-------------------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'CLOCK'                                                                 ;
++--------+--------------+----------------+------------------+-------+------------+------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                 ;
++--------+--------------+----------------+------------------+-------+------------+------------------------+
+; -1.469 ; 1.000        ; 2.469          ; Port Rate        ; CLOCK ; Rise       ; CLOCK                  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK ; Fall       ; triscFSM1:inst|state.A ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK ; Fall       ; triscFSM1:inst|state.A ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK ; Fall       ; triscFSM1:inst|state.B ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK ; Fall       ; triscFSM1:inst|state.B ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK ; Fall       ; triscFSM1:inst|state.C ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK ; Fall       ; triscFSM1:inst|state.C ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK ; Fall       ; triscFSM1:inst|state.D ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK ; Fall       ; triscFSM1:inst|state.D ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK ; Fall       ; triscFSM1:inst|state.E ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK ; Fall       ; triscFSM1:inst|state.E ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK ; Fall       ; triscFSM1:inst|state.F ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK ; Fall       ; triscFSM1:inst|state.F ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK ; Fall       ; triscFSM1:inst|state.G ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK ; Fall       ; triscFSM1:inst|state.G ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK ; Fall       ; triscFSM1:inst|state.H ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK ; Fall       ; triscFSM1:inst|state.H ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK ; Fall       ; triscFSM1:inst|state.I ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK ; Fall       ; triscFSM1:inst|state.I ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK ; Fall       ; triscFSM1:inst|state.J ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK ; Fall       ; triscFSM1:inst|state.J ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK ; Fall       ; triscFSM1:inst|state.K ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK ; Fall       ; triscFSM1:inst|state.K ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK ; Fall       ; triscFSM1:inst|state.L ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK ; Fall       ; triscFSM1:inst|state.L ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK ; Fall       ; triscFSM1:inst|state.M ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK ; Fall       ; triscFSM1:inst|state.M ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK ; Fall       ; triscFSM1:inst|state.N ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK ; Fall       ; triscFSM1:inst|state.N ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK ; Fall       ; triscFSM1:inst|state.O ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK ; Fall       ; triscFSM1:inst|state.O ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK ; Fall       ; triscFSM1:inst|state.P ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK ; Fall       ; triscFSM1:inst|state.P ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK ; Fall       ; triscFSM1:inst|state.Q ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK ; Fall       ; triscFSM1:inst|state.Q ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK ; Fall       ; triscFSM1:inst|state.R ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK ; Fall       ; triscFSM1:inst|state.R ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK ; Fall       ; triscFSM1:inst|state.S ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK ; Fall       ; triscFSM1:inst|state.S ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK ; Fall       ; triscFSM1:inst|state.T ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK ; Fall       ; triscFSM1:inst|state.T ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK ; Fall       ; triscFSM1:inst|state.U ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK ; Fall       ; triscFSM1:inst|state.U ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK ; Fall       ; triscFSM1:inst|state.V ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK ; Fall       ; triscFSM1:inst|state.V ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; CLOCK|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; CLOCK|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; inst|state.A|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; inst|state.A|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; inst|state.B|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; inst|state.B|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; inst|state.C|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; inst|state.C|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; inst|state.D|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; inst|state.D|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; inst|state.E|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; inst|state.E|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; inst|state.F|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; inst|state.F|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; inst|state.G|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; inst|state.G|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; inst|state.H|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; inst|state.H|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; inst|state.I|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; inst|state.I|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; inst|state.J|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; inst|state.J|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; inst|state.K|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; inst|state.K|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; inst|state.L|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; inst|state.L|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; inst|state.M|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; inst|state.M|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; inst|state.N|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; inst|state.N|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; inst|state.O|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; inst|state.O|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; inst|state.P|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; inst|state.P|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; inst|state.Q|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; inst|state.Q|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; inst|state.R|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; inst|state.R|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; inst|state.S|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; inst|state.S|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; inst|state.T|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; inst|state.T|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; inst|state.U|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; inst|state.U|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; inst|state.V|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; inst|state.V|clk       ;
++--------+--------------+----------------+------------------+-------+------------+------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'LabTen:inst2|ADD'                                                                           ;
++-------+--------------+----------------+------------------+------------------+------------+-----------------------------------+
+; Slack ; Actual Width ; Required Width ; Type             ; Clock            ; Clock Edge ; Target                            ;
++-------+--------------+----------------+------------------+------------------+------------+-----------------------------------+
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Rise       ; inst2|ADD|combout                 ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Rise       ; inst2|ADD|combout                 ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Rise       ; inst|Selector29~0clkctrl|inclk[0] ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Rise       ; inst|Selector29~0clkctrl|inclk[0] ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Rise       ; inst|Selector29~0clkctrl|outclk   ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Rise       ; inst|Selector29~0clkctrl|outclk   ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Rise       ; inst|Selector29~0|combout         ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Rise       ; inst|Selector29~0|combout         ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Fall       ; inst|Selector29~0|dataa           ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Fall       ; inst|Selector29~0|dataa           ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Fall       ; inst|comb~1|combout               ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Fall       ; inst|comb~1|combout               ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Rise       ; inst|comb~1|dataa                 ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Rise       ; inst|comb~1|dataa                 ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Rise       ; inst|nextstate.B_875|datac        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Rise       ; inst|nextstate.B_875|datac        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Rise       ; inst|nextstate.C_856|datad        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Rise       ; inst|nextstate.C_856|datad        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Rise       ; inst|nextstate.D_837|datac        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Rise       ; inst|nextstate.D_837|datac        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Rise       ; inst|nextstate.E_818|datac        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Rise       ; inst|nextstate.E_818|datac        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Rise       ; inst|nextstate.J_735|datac        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Rise       ; inst|nextstate.J_735|datac        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Rise       ; inst|nextstate.K_716|datac        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Rise       ; inst|nextstate.K_716|datac        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Rise       ; inst|nextstate.L_697|datac        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Rise       ; inst|nextstate.L_697|datac        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Rise       ; inst|nextstate.N_662|datad        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Rise       ; inst|nextstate.N_662|datad        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Rise       ; inst|nextstate.O_643|datad        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Rise       ; inst|nextstate.O_643|datad        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Rise       ; inst|nextstate.Q_608|datac        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Rise       ; inst|nextstate.Q_608|datac        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Rise       ; inst|nextstate.R_589|datac        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Rise       ; inst|nextstate.R_589|datac        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Rise       ; inst|nextstate.S_570|datac        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Rise       ; inst|nextstate.S_570|datac        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Rise       ; inst|nextstate.T_551|datad        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Rise       ; inst|nextstate.T_551|datad        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Rise       ; inst|nextstate.U_532|datac        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Rise       ; inst|nextstate.U_532|datac        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Rise       ; inst|nextstate.V_513|datac        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Rise       ; inst|nextstate.V_513|datac        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Fall       ; triscFSM1:inst|nextstate.B_875    ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Fall       ; triscFSM1:inst|nextstate.B_875    ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Fall       ; triscFSM1:inst|nextstate.C_856    ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Fall       ; triscFSM1:inst|nextstate.C_856    ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Fall       ; triscFSM1:inst|nextstate.D_837    ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Fall       ; triscFSM1:inst|nextstate.D_837    ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Fall       ; triscFSM1:inst|nextstate.E_818    ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Fall       ; triscFSM1:inst|nextstate.E_818    ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Fall       ; triscFSM1:inst|nextstate.J_735    ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Fall       ; triscFSM1:inst|nextstate.J_735    ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Fall       ; triscFSM1:inst|nextstate.K_716    ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Fall       ; triscFSM1:inst|nextstate.K_716    ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Fall       ; triscFSM1:inst|nextstate.L_697    ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Fall       ; triscFSM1:inst|nextstate.L_697    ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Fall       ; triscFSM1:inst|nextstate.N_662    ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Fall       ; triscFSM1:inst|nextstate.N_662    ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Fall       ; triscFSM1:inst|nextstate.O_643    ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Fall       ; triscFSM1:inst|nextstate.O_643    ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Fall       ; triscFSM1:inst|nextstate.Q_608    ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Fall       ; triscFSM1:inst|nextstate.Q_608    ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Fall       ; triscFSM1:inst|nextstate.R_589    ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Fall       ; triscFSM1:inst|nextstate.R_589    ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Fall       ; triscFSM1:inst|nextstate.S_570    ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Fall       ; triscFSM1:inst|nextstate.S_570    ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Fall       ; triscFSM1:inst|nextstate.T_551    ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Fall       ; triscFSM1:inst|nextstate.T_551    ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Fall       ; triscFSM1:inst|nextstate.U_532    ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Fall       ; triscFSM1:inst|nextstate.U_532    ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Fall       ; triscFSM1:inst|nextstate.V_513    ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Fall       ; triscFSM1:inst|nextstate.V_513    ;
++-------+--------------+----------------+------------------+------------------+------------+-----------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; A         ; A          ; 1.026 ; 1.026 ; Rise       ; A               ;
+; B         ; A          ; 2.794 ; 2.794 ; Rise       ; A               ;
+; C         ; A          ; 2.488 ; 2.488 ; Rise       ; A               ;
+; D         ; A          ; 2.720 ; 2.720 ; Rise       ; A               ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; A         ; A          ; 0.192  ; 0.192  ; Rise       ; A               ;
+; B         ; A          ; -1.482 ; -1.482 ; Rise       ; A               ;
+; C         ; A          ; -1.168 ; -1.168 ; Rise       ; A               ;
+; D         ; A          ; -1.510 ; -1.510 ; Rise       ; A               ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; C0        ; CLOCK      ; 6.344  ; 6.344  ; Fall       ; CLOCK           ;
+; C1        ; CLOCK      ; 6.335  ; 6.335  ; Fall       ; CLOCK           ;
+; C2        ; CLOCK      ; 7.268  ; 7.268  ; Fall       ; CLOCK           ;
+; C3        ; CLOCK      ; 10.289 ; 10.289 ; Fall       ; CLOCK           ;
+; C4        ; CLOCK      ; 10.026 ; 10.026 ; Fall       ; CLOCK           ;
+; C5        ; CLOCK      ; 8.920  ; 8.920  ; Fall       ; CLOCK           ;
+; C7        ; CLOCK      ; 6.945  ; 6.945  ; Fall       ; CLOCK           ;
+; C8        ; CLOCK      ; 6.888  ; 6.888  ; Fall       ; CLOCK           ;
+; C9        ; CLOCK      ; 6.686  ; 6.686  ; Fall       ; CLOCK           ;
+; C11       ; CLOCK      ; 6.697  ; 6.697  ; Fall       ; CLOCK           ;
+; C12       ; CLOCK      ; 7.489  ; 7.489  ; Fall       ; CLOCK           ;
+; C13       ; CLOCK      ; 7.298  ; 7.298  ; Fall       ; CLOCK           ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; C0        ; CLOCK      ; 6.344 ; 6.344 ; Fall       ; CLOCK           ;
+; C1        ; CLOCK      ; 6.335 ; 6.335 ; Fall       ; CLOCK           ;
+; C2        ; CLOCK      ; 7.268 ; 7.268 ; Fall       ; CLOCK           ;
+; C3        ; CLOCK      ; 7.504 ; 7.504 ; Fall       ; CLOCK           ;
+; C4        ; CLOCK      ; 7.525 ; 7.525 ; Fall       ; CLOCK           ;
+; C5        ; CLOCK      ; 8.185 ; 8.185 ; Fall       ; CLOCK           ;
+; C7        ; CLOCK      ; 6.945 ; 6.945 ; Fall       ; CLOCK           ;
+; C8        ; CLOCK      ; 6.888 ; 6.888 ; Fall       ; CLOCK           ;
+; C9        ; CLOCK      ; 6.686 ; 6.686 ; Fall       ; CLOCK           ;
+; C11       ; CLOCK      ; 6.697 ; 6.697 ; Fall       ; CLOCK           ;
+; C12       ; CLOCK      ; 7.489 ; 7.489 ; Fall       ; CLOCK           ;
+; C13       ; CLOCK      ; 7.298 ; 7.298 ; Fall       ; CLOCK           ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------+
+; Fast Model Setup Summary                 ;
++------------------+-------+---------------+
+; Clock            ; Slack ; End Point TNS ;
++------------------+-------+---------------+
+; CLOCK            ; 0.147 ; 0.000         ;
+; A                ; 0.154 ; 0.000         ;
+; LabTen:inst2|ADD ; 0.471 ; 0.000         ;
++------------------+-------+---------------+
+
+
++-------------------------------------------+
+; Fast Model Hold Summary                   ;
++------------------+--------+---------------+
+; Clock            ; Slack  ; End Point TNS ;
++------------------+--------+---------------+
+; LabTen:inst2|ADD ; -0.488 ; -5.638        ;
+; A                ; -0.075 ; -0.415        ;
+; CLOCK            ; 0.578  ; 0.000         ;
++------------------+--------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++-------------------------------------------+
+; Fast Model Minimum Pulse Width Summary    ;
++------------------+--------+---------------+
+; Clock            ; Slack  ; End Point TNS ;
++------------------+--------+---------------+
+; A                ; -1.380 ; -1.380        ;
+; CLOCK            ; -1.222 ; -23.222       ;
+; LabTen:inst2|ADD ; 0.500  ; 0.000         ;
++------------------+--------+---------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'CLOCK'                                                                                                                 ;
++-------+--------------------------------+------------------------+------------------+-------------+--------------+------------+------------+
+; Slack ; From Node                      ; To Node                ; Launch Clock     ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------+------------------------+------------------+-------------+--------------+------------+------------+
+; 0.147 ; triscFSM1:inst|nextstate.B_875 ; triscFSM1:inst|state.B ; LabTen:inst2|ADD ; CLOCK       ; 1.000        ; -0.843     ; 0.042      ;
+; 0.148 ; triscFSM1:inst|nextstate.L_697 ; triscFSM1:inst|state.L ; LabTen:inst2|ADD ; CLOCK       ; 1.000        ; -0.842     ; 0.042      ;
+; 0.150 ; triscFSM1:inst|nextstate.K_716 ; triscFSM1:inst|state.K ; LabTen:inst2|ADD ; CLOCK       ; 1.000        ; -0.840     ; 0.042      ;
+; 0.150 ; triscFSM1:inst|nextstate.D_837 ; triscFSM1:inst|state.D ; LabTen:inst2|ADD ; CLOCK       ; 1.000        ; -0.840     ; 0.042      ;
+; 0.150 ; triscFSM1:inst|nextstate.E_818 ; triscFSM1:inst|state.E ; LabTen:inst2|ADD ; CLOCK       ; 1.000        ; -0.840     ; 0.042      ;
+; 0.152 ; triscFSM1:inst|nextstate.J_735 ; triscFSM1:inst|state.J ; LabTen:inst2|ADD ; CLOCK       ; 1.000        ; -0.838     ; 0.042      ;
+; 0.240 ; triscFSM1:inst|nextstate.C_856 ; triscFSM1:inst|state.C ; LabTen:inst2|ADD ; CLOCK       ; 1.000        ; -0.750     ; 0.042      ;
+; 0.264 ; triscFSM1:inst|nextstate.U_532 ; triscFSM1:inst|state.U ; LabTen:inst2|ADD ; CLOCK       ; 1.000        ; -0.726     ; 0.042      ;
+; 0.264 ; triscFSM1:inst|nextstate.V_513 ; triscFSM1:inst|state.V ; LabTen:inst2|ADD ; CLOCK       ; 1.000        ; -0.726     ; 0.042      ;
+; 0.265 ; triscFSM1:inst|nextstate.S_570 ; triscFSM1:inst|state.S ; LabTen:inst2|ADD ; CLOCK       ; 1.000        ; -0.725     ; 0.042      ;
+; 0.286 ; triscFSM1:inst|nextstate.Q_608 ; triscFSM1:inst|state.Q ; LabTen:inst2|ADD ; CLOCK       ; 1.000        ; -0.704     ; 0.042      ;
+; 0.287 ; triscFSM1:inst|nextstate.R_589 ; triscFSM1:inst|state.R ; LabTen:inst2|ADD ; CLOCK       ; 1.000        ; -0.703     ; 0.042      ;
+; 0.298 ; triscFSM1:inst|nextstate.N_662 ; triscFSM1:inst|state.N ; LabTen:inst2|ADD ; CLOCK       ; 1.000        ; -0.692     ; 0.042      ;
+; 0.301 ; triscFSM1:inst|nextstate.T_551 ; triscFSM1:inst|state.T ; LabTen:inst2|ADD ; CLOCK       ; 1.000        ; -0.689     ; 0.042      ;
+; 0.302 ; triscFSM1:inst|nextstate.O_643 ; triscFSM1:inst|state.O ; LabTen:inst2|ADD ; CLOCK       ; 1.000        ; -0.688     ; 0.042      ;
++-------+--------------------------------+------------------------+------------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'A'                                                                                      ;
++-------+-----------+------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node ; To Node          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+------------------+--------------+-------------+--------------+------------+------------+
+; 0.154 ; A         ; LabTen:inst2|CLR ; A            ; A           ; 0.500        ; 1.146      ; 1.083      ;
+; 0.160 ; A         ; LabTen:inst2|INC ; A            ; A           ; 0.500        ; 1.147      ; 1.079      ;
+; 0.161 ; A         ; LabTen:inst2|ADD ; A            ; A           ; 0.500        ; 1.151      ; 1.085      ;
+; 0.163 ; A         ; LabTen:inst2|LDA ; A            ; A           ; 0.500        ; 1.147      ; 1.079      ;
+; 0.168 ; A         ; LabTen:inst2|JMP ; A            ; A           ; 0.500        ; 1.150      ; 1.075      ;
+; 0.182 ; A         ; LabTen:inst2|STA ; A            ; A           ; 0.500        ; 1.150      ; 1.075      ;
+; 0.654 ; A         ; LabTen:inst2|CLR ; A            ; A           ; 1.000        ; 1.146      ; 1.083      ;
+; 0.660 ; A         ; LabTen:inst2|INC ; A            ; A           ; 1.000        ; 1.147      ; 1.079      ;
+; 0.661 ; A         ; LabTen:inst2|ADD ; A            ; A           ; 1.000        ; 1.151      ; 1.085      ;
+; 0.663 ; A         ; LabTen:inst2|LDA ; A            ; A           ; 1.000        ; 1.147      ; 1.079      ;
+; 0.668 ; A         ; LabTen:inst2|JMP ; A            ; A           ; 1.000        ; 1.150      ; 1.075      ;
+; 0.682 ; A         ; LabTen:inst2|STA ; A            ; A           ; 1.000        ; 1.150      ; 1.075      ;
++-------+-----------+------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'LabTen:inst2|ADD'                                                                                                       ;
++-------+------------------------+--------------------------------+--------------+------------------+--------------+------------+------------+
+; Slack ; From Node              ; To Node                        ; Launch Clock ; Latch Clock      ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------+--------------------------------+--------------+------------------+--------------+------------+------------+
+; 0.471 ; triscFSM1:inst|state.F ; triscFSM1:inst|nextstate.B_875 ; CLOCK        ; LabTen:inst2|ADD ; 1.000        ; 0.843      ; 0.907      ;
+; 0.566 ; triscFSM1:inst|state.G ; triscFSM1:inst|nextstate.B_875 ; CLOCK        ; LabTen:inst2|ADD ; 1.000        ; 0.843      ; 0.812      ;
+; 0.568 ; triscFSM1:inst|state.V ; triscFSM1:inst|nextstate.B_875 ; CLOCK        ; LabTen:inst2|ADD ; 1.000        ; 0.757      ; 0.724      ;
+; 0.648 ; triscFSM1:inst|state.O ; triscFSM1:inst|nextstate.B_875 ; CLOCK        ; LabTen:inst2|ADD ; 1.000        ; 0.757      ; 0.644      ;
+; 0.665 ; triscFSM1:inst|state.A ; triscFSM1:inst|nextstate.B_875 ; CLOCK        ; LabTen:inst2|ADD ; 1.000        ; 0.843      ; 0.713      ;
+; 0.715 ; triscFSM1:inst|state.H ; triscFSM1:inst|nextstate.B_875 ; CLOCK        ; LabTen:inst2|ADD ; 1.000        ; 0.843      ; 0.663      ;
+; 0.729 ; triscFSM1:inst|state.L ; triscFSM1:inst|nextstate.B_875 ; CLOCK        ; LabTen:inst2|ADD ; 1.000        ; 0.843      ; 0.649      ;
+; 0.759 ; triscFSM1:inst|state.J ; triscFSM1:inst|nextstate.K_716 ; CLOCK        ; LabTen:inst2|ADD ; 1.000        ; 0.840      ; 0.353      ;
+; 0.841 ; triscFSM1:inst|state.M ; triscFSM1:inst|nextstate.N_662 ; CLOCK        ; LabTen:inst2|ADD ; 1.000        ; 0.692      ; 0.408      ;
+; 0.845 ; triscFSM1:inst|state.S ; triscFSM1:inst|nextstate.T_551 ; CLOCK        ; LabTen:inst2|ADD ; 1.000        ; 0.689      ; 0.406      ;
+; 0.854 ; triscFSM1:inst|state.P ; triscFSM1:inst|nextstate.Q_608 ; CLOCK        ; LabTen:inst2|ADD ; 1.000        ; 0.704      ; 0.354      ;
+; 0.878 ; triscFSM1:inst|state.Q ; triscFSM1:inst|nextstate.R_589 ; CLOCK        ; LabTen:inst2|ADD ; 1.000        ; 0.703      ; 0.355      ;
+; 0.880 ; triscFSM1:inst|state.T ; triscFSM1:inst|nextstate.U_532 ; CLOCK        ; LabTen:inst2|ADD ; 1.000        ; 0.726      ; 0.353      ;
+; 0.894 ; triscFSM1:inst|state.R ; triscFSM1:inst|nextstate.S_570 ; CLOCK        ; LabTen:inst2|ADD ; 1.000        ; 0.725      ; 0.353      ;
+; 0.916 ; triscFSM1:inst|state.I ; triscFSM1:inst|nextstate.J_735 ; CLOCK        ; LabTen:inst2|ADD ; 1.000        ; 0.838      ; 0.356      ;
+; 0.918 ; triscFSM1:inst|state.B ; triscFSM1:inst|nextstate.C_856 ; CLOCK        ; LabTen:inst2|ADD ; 1.000        ; 0.750      ; 0.406      ;
+; 0.919 ; triscFSM1:inst|state.C ; triscFSM1:inst|nextstate.D_837 ; CLOCK        ; LabTen:inst2|ADD ; 1.000        ; 0.840      ; 0.355      ;
+; 0.944 ; triscFSM1:inst|state.N ; triscFSM1:inst|nextstate.O_643 ; CLOCK        ; LabTen:inst2|ADD ; 1.000        ; 0.688      ; 0.403      ;
+; 0.978 ; triscFSM1:inst|state.U ; triscFSM1:inst|nextstate.V_513 ; CLOCK        ; LabTen:inst2|ADD ; 1.000        ; 0.726      ; 0.348      ;
+; 1.018 ; triscFSM1:inst|state.K ; triscFSM1:inst|nextstate.L_697 ; CLOCK        ; LabTen:inst2|ADD ; 1.000        ; 0.842      ; 0.357      ;
+; 1.103 ; triscFSM1:inst|state.D ; triscFSM1:inst|nextstate.E_818 ; CLOCK        ; LabTen:inst2|ADD ; 1.000        ; 0.840      ; 0.352      ;
++-------+------------------------+--------------------------------+--------------+------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'LabTen:inst2|ADD'                                                                                                         ;
++--------+------------------------+--------------------------------+--------------+------------------+--------------+------------+------------+
+; Slack  ; From Node              ; To Node                        ; Launch Clock ; Latch Clock      ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------+--------------------------------+--------------+------------------+--------------+------------+------------+
+; -0.488 ; triscFSM1:inst|state.D ; triscFSM1:inst|nextstate.E_818 ; CLOCK        ; LabTen:inst2|ADD ; 0.000        ; 0.840      ; 0.352      ;
+; -0.487 ; triscFSM1:inst|state.J ; triscFSM1:inst|nextstate.K_716 ; CLOCK        ; LabTen:inst2|ADD ; 0.000        ; 0.840      ; 0.353      ;
+; -0.485 ; triscFSM1:inst|state.K ; triscFSM1:inst|nextstate.L_697 ; CLOCK        ; LabTen:inst2|ADD ; 0.000        ; 0.842      ; 0.357      ;
+; -0.485 ; triscFSM1:inst|state.C ; triscFSM1:inst|nextstate.D_837 ; CLOCK        ; LabTen:inst2|ADD ; 0.000        ; 0.840      ; 0.355      ;
+; -0.482 ; triscFSM1:inst|state.I ; triscFSM1:inst|nextstate.J_735 ; CLOCK        ; LabTen:inst2|ADD ; 0.000        ; 0.838      ; 0.356      ;
+; -0.378 ; triscFSM1:inst|state.U ; triscFSM1:inst|nextstate.V_513 ; CLOCK        ; LabTen:inst2|ADD ; 0.000        ; 0.726      ; 0.348      ;
+; -0.373 ; triscFSM1:inst|state.T ; triscFSM1:inst|nextstate.U_532 ; CLOCK        ; LabTen:inst2|ADD ; 0.000        ; 0.726      ; 0.353      ;
+; -0.372 ; triscFSM1:inst|state.R ; triscFSM1:inst|nextstate.S_570 ; CLOCK        ; LabTen:inst2|ADD ; 0.000        ; 0.725      ; 0.353      ;
+; -0.350 ; triscFSM1:inst|state.P ; triscFSM1:inst|nextstate.Q_608 ; CLOCK        ; LabTen:inst2|ADD ; 0.000        ; 0.704      ; 0.354      ;
+; -0.348 ; triscFSM1:inst|state.Q ; triscFSM1:inst|nextstate.R_589 ; CLOCK        ; LabTen:inst2|ADD ; 0.000        ; 0.703      ; 0.355      ;
+; -0.344 ; triscFSM1:inst|state.B ; triscFSM1:inst|nextstate.C_856 ; CLOCK        ; LabTen:inst2|ADD ; 0.000        ; 0.750      ; 0.406      ;
+; -0.285 ; triscFSM1:inst|state.N ; triscFSM1:inst|nextstate.O_643 ; CLOCK        ; LabTen:inst2|ADD ; 0.000        ; 0.688      ; 0.403      ;
+; -0.284 ; triscFSM1:inst|state.M ; triscFSM1:inst|nextstate.N_662 ; CLOCK        ; LabTen:inst2|ADD ; 0.000        ; 0.692      ; 0.408      ;
+; -0.283 ; triscFSM1:inst|state.S ; triscFSM1:inst|nextstate.T_551 ; CLOCK        ; LabTen:inst2|ADD ; 0.000        ; 0.689      ; 0.406      ;
+; -0.194 ; triscFSM1:inst|state.L ; triscFSM1:inst|nextstate.B_875 ; CLOCK        ; LabTen:inst2|ADD ; 0.000        ; 0.843      ; 0.649      ;
+; -0.180 ; triscFSM1:inst|state.H ; triscFSM1:inst|nextstate.B_875 ; CLOCK        ; LabTen:inst2|ADD ; 0.000        ; 0.843      ; 0.663      ;
+; -0.130 ; triscFSM1:inst|state.A ; triscFSM1:inst|nextstate.B_875 ; CLOCK        ; LabTen:inst2|ADD ; 0.000        ; 0.843      ; 0.713      ;
+; -0.113 ; triscFSM1:inst|state.O ; triscFSM1:inst|nextstate.B_875 ; CLOCK        ; LabTen:inst2|ADD ; 0.000        ; 0.757      ; 0.644      ;
+; -0.033 ; triscFSM1:inst|state.V ; triscFSM1:inst|nextstate.B_875 ; CLOCK        ; LabTen:inst2|ADD ; 0.000        ; 0.757      ; 0.724      ;
+; -0.031 ; triscFSM1:inst|state.G ; triscFSM1:inst|nextstate.B_875 ; CLOCK        ; LabTen:inst2|ADD ; 0.000        ; 0.843      ; 0.812      ;
+; 0.064  ; triscFSM1:inst|state.F ; triscFSM1:inst|nextstate.B_875 ; CLOCK        ; LabTen:inst2|ADD ; 0.000        ; 0.843      ; 0.907      ;
++--------+------------------------+--------------------------------+--------------+------------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'A'                                                                                        ;
++--------+-----------+------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+------------------+--------------+-------------+--------------+------------+------------+
+; -0.075 ; A         ; LabTen:inst2|JMP ; A            ; A           ; 0.000        ; 1.150      ; 1.075      ;
+; -0.075 ; A         ; LabTen:inst2|STA ; A            ; A           ; 0.000        ; 1.150      ; 1.075      ;
+; -0.068 ; A         ; LabTen:inst2|INC ; A            ; A           ; 0.000        ; 1.147      ; 1.079      ;
+; -0.068 ; A         ; LabTen:inst2|LDA ; A            ; A           ; 0.000        ; 1.147      ; 1.079      ;
+; -0.066 ; A         ; LabTen:inst2|ADD ; A            ; A           ; 0.000        ; 1.151      ; 1.085      ;
+; -0.063 ; A         ; LabTen:inst2|CLR ; A            ; A           ; 0.000        ; 1.146      ; 1.083      ;
+; 0.425  ; A         ; LabTen:inst2|JMP ; A            ; A           ; -0.500       ; 1.150      ; 1.075      ;
+; 0.425  ; A         ; LabTen:inst2|STA ; A            ; A           ; -0.500       ; 1.150      ; 1.075      ;
+; 0.432  ; A         ; LabTen:inst2|INC ; A            ; A           ; -0.500       ; 1.147      ; 1.079      ;
+; 0.432  ; A         ; LabTen:inst2|LDA ; A            ; A           ; -0.500       ; 1.147      ; 1.079      ;
+; 0.434  ; A         ; LabTen:inst2|ADD ; A            ; A           ; -0.500       ; 1.151      ; 1.085      ;
+; 0.437  ; A         ; LabTen:inst2|CLR ; A            ; A           ; -0.500       ; 1.146      ; 1.083      ;
++--------+-----------+------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'CLOCK'                                                                                                                  ;
++-------+--------------------------------+------------------------+------------------+-------------+--------------+------------+------------+
+; Slack ; From Node                      ; To Node                ; Launch Clock     ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------+------------------------+------------------+-------------+--------------+------------+------------+
+; 0.578 ; triscFSM1:inst|nextstate.O_643 ; triscFSM1:inst|state.O ; LabTen:inst2|ADD ; CLOCK       ; 0.000        ; -0.688     ; 0.042      ;
+; 0.579 ; triscFSM1:inst|nextstate.T_551 ; triscFSM1:inst|state.T ; LabTen:inst2|ADD ; CLOCK       ; 0.000        ; -0.689     ; 0.042      ;
+; 0.582 ; triscFSM1:inst|nextstate.N_662 ; triscFSM1:inst|state.N ; LabTen:inst2|ADD ; CLOCK       ; 0.000        ; -0.692     ; 0.042      ;
+; 0.593 ; triscFSM1:inst|nextstate.R_589 ; triscFSM1:inst|state.R ; LabTen:inst2|ADD ; CLOCK       ; 0.000        ; -0.703     ; 0.042      ;
+; 0.594 ; triscFSM1:inst|nextstate.Q_608 ; triscFSM1:inst|state.Q ; LabTen:inst2|ADD ; CLOCK       ; 0.000        ; -0.704     ; 0.042      ;
+; 0.615 ; triscFSM1:inst|nextstate.S_570 ; triscFSM1:inst|state.S ; LabTen:inst2|ADD ; CLOCK       ; 0.000        ; -0.725     ; 0.042      ;
+; 0.616 ; triscFSM1:inst|nextstate.U_532 ; triscFSM1:inst|state.U ; LabTen:inst2|ADD ; CLOCK       ; 0.000        ; -0.726     ; 0.042      ;
+; 0.616 ; triscFSM1:inst|nextstate.V_513 ; triscFSM1:inst|state.V ; LabTen:inst2|ADD ; CLOCK       ; 0.000        ; -0.726     ; 0.042      ;
+; 0.640 ; triscFSM1:inst|nextstate.C_856 ; triscFSM1:inst|state.C ; LabTen:inst2|ADD ; CLOCK       ; 0.000        ; -0.750     ; 0.042      ;
+; 0.728 ; triscFSM1:inst|nextstate.J_735 ; triscFSM1:inst|state.J ; LabTen:inst2|ADD ; CLOCK       ; 0.000        ; -0.838     ; 0.042      ;
+; 0.730 ; triscFSM1:inst|nextstate.K_716 ; triscFSM1:inst|state.K ; LabTen:inst2|ADD ; CLOCK       ; 0.000        ; -0.840     ; 0.042      ;
+; 0.730 ; triscFSM1:inst|nextstate.D_837 ; triscFSM1:inst|state.D ; LabTen:inst2|ADD ; CLOCK       ; 0.000        ; -0.840     ; 0.042      ;
+; 0.730 ; triscFSM1:inst|nextstate.E_818 ; triscFSM1:inst|state.E ; LabTen:inst2|ADD ; CLOCK       ; 0.000        ; -0.840     ; 0.042      ;
+; 0.732 ; triscFSM1:inst|nextstate.L_697 ; triscFSM1:inst|state.L ; LabTen:inst2|ADD ; CLOCK       ; 0.000        ; -0.842     ; 0.042      ;
+; 0.733 ; triscFSM1:inst|nextstate.B_875 ; triscFSM1:inst|state.B ; LabTen:inst2|ADD ; CLOCK       ; 0.000        ; -0.843     ; 0.042      ;
++-------+--------------------------------+------------------------+------------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'A'                                                                      ;
++--------+--------------+----------------+------------------+-------+------------+-------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                  ;
++--------+--------------+----------------+------------------+-------+------------+-------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; A     ; Rise       ; A                       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; A     ; Rise       ; A|combout               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; A     ; Rise       ; A|combout               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; A     ; Rise       ; LabTen:inst2|ADD        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; A     ; Rise       ; LabTen:inst2|ADD        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; A     ; Rise       ; LabTen:inst2|CLR        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; A     ; Rise       ; LabTen:inst2|CLR        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; A     ; Rise       ; LabTen:inst2|INC        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; A     ; Rise       ; LabTen:inst2|INC        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; A     ; Rise       ; LabTen:inst2|JMP        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; A     ; Rise       ; LabTen:inst2|JMP        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; A     ; Rise       ; LabTen:inst2|LDA        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; A     ; Rise       ; LabTen:inst2|LDA        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; A     ; Rise       ; LabTen:inst2|STA        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; A     ; Rise       ; LabTen:inst2|STA        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; A     ; Rise       ; inst2|ADD|datac         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; A     ; Rise       ; inst2|ADD|datac         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; A     ; Rise       ; inst2|CLR|datac         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; A     ; Rise       ; inst2|CLR|datac         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; A     ; Rise       ; inst2|INC|datac         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; A     ; Rise       ; inst2|INC|datac         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; A     ; Rise       ; inst2|JMP|datac         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; A     ; Rise       ; inst2|JMP|datac         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; A     ; Rise       ; inst2|LDA|datac         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; A     ; Rise       ; inst2|LDA|datac         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; A     ; Rise       ; inst2|STA|datac         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; A     ; Rise       ; inst2|STA|datac         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; A     ; Rise       ; inst2|WideOr1~0|combout ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; A     ; Rise       ; inst2|WideOr1~0|combout ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; A     ; Rise       ; inst2|WideOr1~0|datad   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; A     ; Rise       ; inst2|WideOr1~0|datad   ;
++--------+--------------+----------------+------------------+-------+------------+-------------------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'CLOCK'                                                                 ;
++--------+--------------+----------------+------------------+-------+------------+------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                 ;
++--------+--------------+----------------+------------------+-------+------------+------------------------+
+; -1.222 ; 1.000        ; 2.222          ; Port Rate        ; CLOCK ; Rise       ; CLOCK                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK ; Fall       ; triscFSM1:inst|state.A ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK ; Fall       ; triscFSM1:inst|state.A ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK ; Fall       ; triscFSM1:inst|state.B ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK ; Fall       ; triscFSM1:inst|state.B ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK ; Fall       ; triscFSM1:inst|state.C ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK ; Fall       ; triscFSM1:inst|state.C ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK ; Fall       ; triscFSM1:inst|state.D ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK ; Fall       ; triscFSM1:inst|state.D ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK ; Fall       ; triscFSM1:inst|state.E ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK ; Fall       ; triscFSM1:inst|state.E ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK ; Fall       ; triscFSM1:inst|state.F ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK ; Fall       ; triscFSM1:inst|state.F ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK ; Fall       ; triscFSM1:inst|state.G ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK ; Fall       ; triscFSM1:inst|state.G ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK ; Fall       ; triscFSM1:inst|state.H ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK ; Fall       ; triscFSM1:inst|state.H ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK ; Fall       ; triscFSM1:inst|state.I ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK ; Fall       ; triscFSM1:inst|state.I ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK ; Fall       ; triscFSM1:inst|state.J ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK ; Fall       ; triscFSM1:inst|state.J ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK ; Fall       ; triscFSM1:inst|state.K ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK ; Fall       ; triscFSM1:inst|state.K ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK ; Fall       ; triscFSM1:inst|state.L ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK ; Fall       ; triscFSM1:inst|state.L ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK ; Fall       ; triscFSM1:inst|state.M ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK ; Fall       ; triscFSM1:inst|state.M ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK ; Fall       ; triscFSM1:inst|state.N ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK ; Fall       ; triscFSM1:inst|state.N ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK ; Fall       ; triscFSM1:inst|state.O ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK ; Fall       ; triscFSM1:inst|state.O ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK ; Fall       ; triscFSM1:inst|state.P ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK ; Fall       ; triscFSM1:inst|state.P ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK ; Fall       ; triscFSM1:inst|state.Q ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK ; Fall       ; triscFSM1:inst|state.Q ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK ; Fall       ; triscFSM1:inst|state.R ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK ; Fall       ; triscFSM1:inst|state.R ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK ; Fall       ; triscFSM1:inst|state.S ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK ; Fall       ; triscFSM1:inst|state.S ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK ; Fall       ; triscFSM1:inst|state.T ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK ; Fall       ; triscFSM1:inst|state.T ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK ; Fall       ; triscFSM1:inst|state.U ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK ; Fall       ; triscFSM1:inst|state.U ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK ; Fall       ; triscFSM1:inst|state.V ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK ; Fall       ; triscFSM1:inst|state.V ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; CLOCK|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; CLOCK|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; inst|state.A|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; inst|state.A|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; inst|state.B|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; inst|state.B|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; inst|state.C|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; inst|state.C|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; inst|state.D|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; inst|state.D|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; inst|state.E|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; inst|state.E|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; inst|state.F|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; inst|state.F|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; inst|state.G|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; inst|state.G|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; inst|state.H|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; inst|state.H|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; inst|state.I|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; inst|state.I|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; inst|state.J|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; inst|state.J|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; inst|state.K|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; inst|state.K|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; inst|state.L|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; inst|state.L|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; inst|state.M|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; inst|state.M|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; inst|state.N|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; inst|state.N|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; inst|state.O|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; inst|state.O|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; inst|state.P|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; inst|state.P|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; inst|state.Q|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; inst|state.Q|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; inst|state.R|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; inst|state.R|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; inst|state.S|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; inst|state.S|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; inst|state.T|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; inst|state.T|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; inst|state.U|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; inst|state.U|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; inst|state.V|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; inst|state.V|clk       ;
++--------+--------------+----------------+------------------+-------+------------+------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'LabTen:inst2|ADD'                                                                           ;
++-------+--------------+----------------+------------------+------------------+------------+-----------------------------------+
+; Slack ; Actual Width ; Required Width ; Type             ; Clock            ; Clock Edge ; Target                            ;
++-------+--------------+----------------+------------------+------------------+------------+-----------------------------------+
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Rise       ; inst2|ADD|combout                 ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Rise       ; inst2|ADD|combout                 ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Rise       ; inst|Selector29~0clkctrl|inclk[0] ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Rise       ; inst|Selector29~0clkctrl|inclk[0] ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Rise       ; inst|Selector29~0clkctrl|outclk   ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Rise       ; inst|Selector29~0clkctrl|outclk   ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Rise       ; inst|Selector29~0|combout         ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Rise       ; inst|Selector29~0|combout         ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Fall       ; inst|Selector29~0|dataa           ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Fall       ; inst|Selector29~0|dataa           ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Fall       ; inst|comb~1|combout               ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Fall       ; inst|comb~1|combout               ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Rise       ; inst|comb~1|dataa                 ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Rise       ; inst|comb~1|dataa                 ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Rise       ; inst|nextstate.B_875|datac        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Rise       ; inst|nextstate.B_875|datac        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Rise       ; inst|nextstate.C_856|datad        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Rise       ; inst|nextstate.C_856|datad        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Rise       ; inst|nextstate.D_837|datac        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Rise       ; inst|nextstate.D_837|datac        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Rise       ; inst|nextstate.E_818|datac        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Rise       ; inst|nextstate.E_818|datac        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Rise       ; inst|nextstate.J_735|datac        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Rise       ; inst|nextstate.J_735|datac        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Rise       ; inst|nextstate.K_716|datac        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Rise       ; inst|nextstate.K_716|datac        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Rise       ; inst|nextstate.L_697|datac        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Rise       ; inst|nextstate.L_697|datac        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Rise       ; inst|nextstate.N_662|datad        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Rise       ; inst|nextstate.N_662|datad        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Rise       ; inst|nextstate.O_643|datad        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Rise       ; inst|nextstate.O_643|datad        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Rise       ; inst|nextstate.Q_608|datac        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Rise       ; inst|nextstate.Q_608|datac        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Rise       ; inst|nextstate.R_589|datac        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Rise       ; inst|nextstate.R_589|datac        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Rise       ; inst|nextstate.S_570|datac        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Rise       ; inst|nextstate.S_570|datac        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Rise       ; inst|nextstate.T_551|datad        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Rise       ; inst|nextstate.T_551|datad        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Rise       ; inst|nextstate.U_532|datac        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Rise       ; inst|nextstate.U_532|datac        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Rise       ; inst|nextstate.V_513|datac        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Rise       ; inst|nextstate.V_513|datac        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Fall       ; triscFSM1:inst|nextstate.B_875    ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Fall       ; triscFSM1:inst|nextstate.B_875    ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Fall       ; triscFSM1:inst|nextstate.C_856    ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Fall       ; triscFSM1:inst|nextstate.C_856    ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Fall       ; triscFSM1:inst|nextstate.D_837    ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Fall       ; triscFSM1:inst|nextstate.D_837    ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Fall       ; triscFSM1:inst|nextstate.E_818    ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Fall       ; triscFSM1:inst|nextstate.E_818    ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Fall       ; triscFSM1:inst|nextstate.J_735    ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Fall       ; triscFSM1:inst|nextstate.J_735    ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Fall       ; triscFSM1:inst|nextstate.K_716    ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Fall       ; triscFSM1:inst|nextstate.K_716    ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Fall       ; triscFSM1:inst|nextstate.L_697    ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Fall       ; triscFSM1:inst|nextstate.L_697    ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Fall       ; triscFSM1:inst|nextstate.N_662    ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Fall       ; triscFSM1:inst|nextstate.N_662    ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Fall       ; triscFSM1:inst|nextstate.O_643    ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Fall       ; triscFSM1:inst|nextstate.O_643    ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Fall       ; triscFSM1:inst|nextstate.Q_608    ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Fall       ; triscFSM1:inst|nextstate.Q_608    ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Fall       ; triscFSM1:inst|nextstate.R_589    ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Fall       ; triscFSM1:inst|nextstate.R_589    ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Fall       ; triscFSM1:inst|nextstate.S_570    ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Fall       ; triscFSM1:inst|nextstate.S_570    ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Fall       ; triscFSM1:inst|nextstate.T_551    ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Fall       ; triscFSM1:inst|nextstate.T_551    ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Fall       ; triscFSM1:inst|nextstate.U_532    ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Fall       ; triscFSM1:inst|nextstate.U_532    ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; LabTen:inst2|ADD ; Fall       ; triscFSM1:inst|nextstate.V_513    ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; LabTen:inst2|ADD ; Fall       ; triscFSM1:inst|nextstate.V_513    ;
++-------+--------------+----------------+------------------+------------------+------------+-----------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; A         ; A          ; 0.346 ; 0.346 ; Rise       ; A               ;
+; B         ; A          ; 1.122 ; 1.122 ; Rise       ; A               ;
+; C         ; A          ; 1.012 ; 1.012 ; Rise       ; A               ;
+; D         ; A          ; 1.138 ; 1.138 ; Rise       ; A               ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; A         ; A          ; 0.075  ; 0.075  ; Rise       ; A               ;
+; B         ; A          ; -0.697 ; -0.697 ; Rise       ; A               ;
+; C         ; A          ; -0.588 ; -0.588 ; Rise       ; A               ;
+; D         ; A          ; -0.695 ; -0.695 ; Rise       ; A               ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; C0        ; CLOCK      ; 3.117 ; 3.117 ; Fall       ; CLOCK           ;
+; C1        ; CLOCK      ; 3.115 ; 3.115 ; Fall       ; CLOCK           ;
+; C2        ; CLOCK      ; 3.460 ; 3.460 ; Fall       ; CLOCK           ;
+; C3        ; CLOCK      ; 4.581 ; 4.581 ; Fall       ; CLOCK           ;
+; C4        ; CLOCK      ; 4.495 ; 4.495 ; Fall       ; CLOCK           ;
+; C5        ; CLOCK      ; 4.116 ; 4.116 ; Fall       ; CLOCK           ;
+; C7        ; CLOCK      ; 3.350 ; 3.350 ; Fall       ; CLOCK           ;
+; C8        ; CLOCK      ; 3.314 ; 3.314 ; Fall       ; CLOCK           ;
+; C9        ; CLOCK      ; 3.250 ; 3.250 ; Fall       ; CLOCK           ;
+; C11       ; CLOCK      ; 3.256 ; 3.256 ; Fall       ; CLOCK           ;
+; C12       ; CLOCK      ; 3.537 ; 3.537 ; Fall       ; CLOCK           ;
+; C13       ; CLOCK      ; 3.513 ; 3.513 ; Fall       ; CLOCK           ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; C0        ; CLOCK      ; 3.117 ; 3.117 ; Fall       ; CLOCK           ;
+; C1        ; CLOCK      ; 3.115 ; 3.115 ; Fall       ; CLOCK           ;
+; C2        ; CLOCK      ; 3.460 ; 3.460 ; Fall       ; CLOCK           ;
+; C3        ; CLOCK      ; 3.530 ; 3.530 ; Fall       ; CLOCK           ;
+; C4        ; CLOCK      ; 3.551 ; 3.551 ; Fall       ; CLOCK           ;
+; C5        ; CLOCK      ; 3.813 ; 3.813 ; Fall       ; CLOCK           ;
+; C7        ; CLOCK      ; 3.350 ; 3.350 ; Fall       ; CLOCK           ;
+; C8        ; CLOCK      ; 3.314 ; 3.314 ; Fall       ; CLOCK           ;
+; C9        ; CLOCK      ; 3.250 ; 3.250 ; Fall       ; CLOCK           ;
+; C11       ; CLOCK      ; 3.256 ; 3.256 ; Fall       ; CLOCK           ;
+; C12       ; CLOCK      ; 3.537 ; 3.537 ; Fall       ; CLOCK           ;
+; C13       ; CLOCK      ; 3.513 ; 3.513 ; Fall       ; CLOCK           ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                             ;
++-------------------+---------+--------+----------+---------+---------------------+
+; Clock             ; Setup   ; Hold   ; Recovery ; Removal ; Minimum Pulse Width ;
++-------------------+---------+--------+----------+---------+---------------------+
+; Worst-case Slack  ; -1.048  ; -0.882 ; N/A      ; N/A     ; -1.631              ;
+;  A                ; -0.526  ; -0.192 ; N/A      ; N/A     ; -1.631              ;
+;  CLOCK            ; -0.762  ; 0.578  ; N/A      ; N/A     ; -1.469              ;
+;  LabTen:inst2|ADD ; -1.048  ; -0.882 ; N/A      ; N/A     ; 0.500               ;
+; Design-wide TNS   ; -12.632 ; -9.993 ; 0.0      ; 0.0     ; -29.984             ;
+;  A                ; -3.023  ; -1.095 ; N/A      ; N/A     ; -1.631              ;
+;  CLOCK            ; -8.395  ; 0.000  ; N/A      ; N/A     ; -28.353             ;
+;  LabTen:inst2|ADD ; -1.214  ; -8.898 ; N/A      ; N/A     ; 0.000               ;
++-------------------+---------+--------+----------+---------+---------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; A         ; A          ; 1.026 ; 1.026 ; Rise       ; A               ;
+; B         ; A          ; 2.794 ; 2.794 ; Rise       ; A               ;
+; C         ; A          ; 2.488 ; 2.488 ; Rise       ; A               ;
+; D         ; A          ; 2.720 ; 2.720 ; Rise       ; A               ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; A         ; A          ; 0.192  ; 0.192  ; Rise       ; A               ;
+; B         ; A          ; -0.697 ; -0.697 ; Rise       ; A               ;
+; C         ; A          ; -0.588 ; -0.588 ; Rise       ; A               ;
+; D         ; A          ; -0.695 ; -0.695 ; Rise       ; A               ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; C0        ; CLOCK      ; 6.344  ; 6.344  ; Fall       ; CLOCK           ;
+; C1        ; CLOCK      ; 6.335  ; 6.335  ; Fall       ; CLOCK           ;
+; C2        ; CLOCK      ; 7.268  ; 7.268  ; Fall       ; CLOCK           ;
+; C3        ; CLOCK      ; 10.289 ; 10.289 ; Fall       ; CLOCK           ;
+; C4        ; CLOCK      ; 10.026 ; 10.026 ; Fall       ; CLOCK           ;
+; C5        ; CLOCK      ; 8.920  ; 8.920  ; Fall       ; CLOCK           ;
+; C7        ; CLOCK      ; 6.945  ; 6.945  ; Fall       ; CLOCK           ;
+; C8        ; CLOCK      ; 6.888  ; 6.888  ; Fall       ; CLOCK           ;
+; C9        ; CLOCK      ; 6.686  ; 6.686  ; Fall       ; CLOCK           ;
+; C11       ; CLOCK      ; 6.697  ; 6.697  ; Fall       ; CLOCK           ;
+; C12       ; CLOCK      ; 7.489  ; 7.489  ; Fall       ; CLOCK           ;
+; C13       ; CLOCK      ; 7.298  ; 7.298  ; Fall       ; CLOCK           ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; C0        ; CLOCK      ; 3.117 ; 3.117 ; Fall       ; CLOCK           ;
+; C1        ; CLOCK      ; 3.115 ; 3.115 ; Fall       ; CLOCK           ;
+; C2        ; CLOCK      ; 3.460 ; 3.460 ; Fall       ; CLOCK           ;
+; C3        ; CLOCK      ; 3.530 ; 3.530 ; Fall       ; CLOCK           ;
+; C4        ; CLOCK      ; 3.551 ; 3.551 ; Fall       ; CLOCK           ;
+; C5        ; CLOCK      ; 3.813 ; 3.813 ; Fall       ; CLOCK           ;
+; C7        ; CLOCK      ; 3.350 ; 3.350 ; Fall       ; CLOCK           ;
+; C8        ; CLOCK      ; 3.314 ; 3.314 ; Fall       ; CLOCK           ;
+; C9        ; CLOCK      ; 3.250 ; 3.250 ; Fall       ; CLOCK           ;
+; C11       ; CLOCK      ; 3.256 ; 3.256 ; Fall       ; CLOCK           ;
+; C12       ; CLOCK      ; 3.537 ; 3.537 ; Fall       ; CLOCK           ;
+; C13       ; CLOCK      ; 3.513 ; 3.513 ; Fall       ; CLOCK           ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------------------+
+; Setup Transfers                                                                 ;
++------------------+------------------+----------+----------+----------+----------+
+; From Clock       ; To Clock         ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------------+------------------+----------+----------+----------+----------+
+; A                ; A                ; 6        ; 6        ; 0        ; 0        ;
+; LabTen:inst2|ADD ; CLOCK            ; 0        ; 0        ; 0        ; 15       ;
+; CLOCK            ; LabTen:inst2|ADD ; 0        ; 0        ; 0        ; 21       ;
++------------------+------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++---------------------------------------------------------------------------------+
+; Hold Transfers                                                                  ;
++------------------+------------------+----------+----------+----------+----------+
+; From Clock       ; To Clock         ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------------+------------------+----------+----------+----------+----------+
+; A                ; A                ; 6        ; 6        ; 0        ; 0        ;
+; LabTen:inst2|ADD ; CLOCK            ; 0        ; 0        ; 0        ; 15       ;
+; CLOCK            ; LabTen:inst2|ADD ; 0        ; 0        ; 0        ; 21       ;
++------------------+------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 4     ; 4    ;
+; Unconstrained Input Port Paths  ; 40    ; 40   ;
+; Unconstrained Output Ports      ; 12    ; 12   ;
+; Unconstrained Output Port Paths ; 30    ; 30   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Tue May 04 17:36:40 2021
+Info: Command: quartus_sta ControlUnit -c ControlUnit
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Warning (335093): TimeQuest Timing Analyzer is analyzing 27 combinational loops as latches.
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'ControlUnit.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name CLOCK CLOCK
+    Info (332105): create_clock -period 1.000 -name LabTen:inst2|ADD LabTen:inst2|ADD
+    Info (332105): create_clock -period 1.000 -name A A
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -1.048
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.048        -1.214 LabTen:inst2|ADD 
+    Info (332119):    -0.762        -8.395 CLOCK 
+    Info (332119):    -0.526        -3.023 A 
+Info (332146): Worst-case hold slack is -0.882
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.882        -8.898 LabTen:inst2|ADD 
+    Info (332119):    -0.192        -1.095 A 
+    Info (332119):     1.097         0.000 CLOCK 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.631
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.631        -1.631 A 
+    Info (332119):    -1.469       -28.353 CLOCK 
+    Info (332119):     0.500         0.000 LabTen:inst2|ADD 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Info (332146): Worst-case setup slack is 0.147
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.147         0.000 CLOCK 
+    Info (332119):     0.154         0.000 A 
+    Info (332119):     0.471         0.000 LabTen:inst2|ADD 
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case hold slack is -0.488
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.488        -5.638 LabTen:inst2|ADD 
+    Info (332119):    -0.075        -0.415 A 
+    Info (332119):     0.578         0.000 CLOCK 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380        -1.380 A 
+    Info (332119):    -1.222       -23.222 CLOCK 
+    Info (332119):     0.500         0.000 LabTen:inst2|ADD 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 4535 megabytes
+    Info: Processing ended: Tue May 04 17:36:41 2021
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

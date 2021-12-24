@@ -1,0 +1,12 @@
+vendor_name = ModelSim
+source_file = 1, C:/Users/justu/Desktop/Spring 2021/CSE 2441/Full Adder/FullAdder.bdf
+source_file = 1, C:/Users/justu/Desktop/Spring 2021/CSE 2441/Full Adder/WaveformFA.vwf
+source_file = 1, C:/Users/justu/Desktop/Spring 2021/CSE 2441/Full Adder/db/FullAdder.cbx.xml
+design_name = FullAdder
+instance = comp, \B~I , B, FullAdder, 1
+instance = comp, \C~I , C, FullAdder, 1
+instance = comp, \A~I , A, FullAdder, 1
+instance = comp, \inst1~0 , inst1~0, FullAdder, 1
+instance = comp, \inst7~0 , inst7~0, FullAdder, 1
+instance = comp, \P~I , P, FullAdder, 1
+instance = comp, \Q~I , Q, FullAdder, 1

@@ -1,0 +1,252 @@
+|ALU
+R3 <= ALUSelection:inst4.Z3
+I3 => 4BitAND:inst.A0
+I3 => 4BitXOR:inst2.A3
+I3 => AdderSubtractorOVR:inst3.A3
+J3 => 4BitAND:inst.B0
+J3 => 4BitXOR:inst2.B3
+J3 => AdderSubtractorOVR:inst3.B7
+I2 => 4BitAND:inst.A3
+I2 => 4BitXOR:inst2.A2
+I2 => AdderSubtractorOVR:inst3.A2
+J2 => 4BitAND:inst.B3
+J2 => 4BitXOR:inst2.B2
+J2 => AdderSubtractorOVR:inst3.B6
+I1 => 4BitAND:inst.A2
+I1 => 4BitXOR:inst2.A1
+I1 => AdderSubtractorOVR:inst3.A1
+J1 => 4BitAND:inst.B2
+J1 => 4BitXOR:inst2.B1
+J1 => AdderSubtractorOVR:inst3.B5
+I0 => 4BitAND:inst.A1
+I0 => 4BitXOR:inst2.A0
+I0 => AdderSubtractorOVR:inst3.A0
+J0 => 4BitAND:inst.B1
+J0 => 4BitXOR:inst2.B0
+J0 => AdderSubtractorOVR:inst3.B4
+B => AdderSubtractorOVR:inst3.C5
+B => ALUSelection:inst4.B
+A => ALUSelection:inst4.A
+R2 <= ALUSelection:inst4.Z2
+R1 <= ALUSelection:inst4.Z1
+R0 <= ALUSelection:inst4.Z0
+COUT <= AdderSubtractorOVR:inst3.C4
+OVR <= AdderSubtractorOVR:inst3.OVR
+
+
+|ALU|ALUSelection:inst4
+Z3 <= Multiplexer421:inst.Z
+P3 => Multiplexer421:inst.D0
+S3 => Multiplexer421:inst.D1
+A3 => Multiplexer421:inst.D2
+X3 => Multiplexer421:inst.D3
+A => Multiplexer421:inst.A
+A => Multiplexer421:inst1.A
+A => Multiplexer421:inst2.A
+A => Multiplexer421:inst3.A
+B => Multiplexer421:inst.B
+B => Multiplexer421:inst1.B
+B => Multiplexer421:inst2.B
+B => Multiplexer421:inst3.B
+Z2 <= Multiplexer421:inst1.Z
+P2 => Multiplexer421:inst1.D0
+S2 => Multiplexer421:inst1.D1
+A2 => Multiplexer421:inst1.D2
+X2 => Multiplexer421:inst1.D3
+Z1 <= Multiplexer421:inst2.Z
+P1 => Multiplexer421:inst2.D0
+S1 => Multiplexer421:inst2.D1
+A1 => Multiplexer421:inst2.D2
+X1 => Multiplexer421:inst2.D3
+Z0 <= Multiplexer421:inst3.Z
+P0 => Multiplexer421:inst3.D0
+S0 => Multiplexer421:inst3.D1
+A0 => Multiplexer421:inst3.D2
+X0 => Multiplexer421:inst3.D3
+
+
+|ALU|ALUSelection:inst4|Multiplexer421:inst
+Z <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+D0 => inst.IN0
+A => inst5.IN0
+A => inst2.IN1
+A => inst3.IN1
+B => inst6.IN0
+B => inst3.IN2
+B => inst1.IN2
+D2 => inst2.IN0
+D3 => inst3.IN0
+D1 => inst1.IN0
+
+
+|ALU|ALUSelection:inst4|Multiplexer421:inst1
+Z <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+D0 => inst.IN0
+A => inst5.IN0
+A => inst2.IN1
+A => inst3.IN1
+B => inst6.IN0
+B => inst3.IN2
+B => inst1.IN2
+D2 => inst2.IN0
+D3 => inst3.IN0
+D1 => inst1.IN0
+
+
+|ALU|ALUSelection:inst4|Multiplexer421:inst2
+Z <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+D0 => inst.IN0
+A => inst5.IN0
+A => inst2.IN1
+A => inst3.IN1
+B => inst6.IN0
+B => inst3.IN2
+B => inst1.IN2
+D2 => inst2.IN0
+D3 => inst3.IN0
+D1 => inst1.IN0
+
+
+|ALU|ALUSelection:inst4|Multiplexer421:inst3
+Z <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+D0 => inst.IN0
+A => inst5.IN0
+A => inst2.IN1
+A => inst3.IN1
+B => inst6.IN0
+B => inst3.IN2
+B => inst1.IN2
+D2 => inst2.IN0
+D3 => inst3.IN0
+D1 => inst1.IN0
+
+
+|ALU|4BitAND:inst
+X3 <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+B3 => inst3.IN0
+A3 => inst3.IN1
+X2 <= inst.DB_MAX_OUTPUT_PORT_TYPE
+B2 => inst.IN0
+A2 => inst.IN1
+X1 <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+B1 => inst1.IN0
+A1 => inst1.IN1
+X0 <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+B0 => inst2.IN0
+A0 => inst2.IN1
+
+
+|ALU|4BitXOR:inst2
+W3 <= inst.DB_MAX_OUTPUT_PORT_TYPE
+B3 => inst.IN0
+A3 => inst.IN1
+W2 <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+B2 => inst1.IN0
+A2 => inst1.IN1
+W1 <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+B1 => inst2.IN0
+A1 => inst2.IN1
+W0 <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+B0 => inst3.IN0
+A0 => inst3.IN1
+
+
+|ALU|AdderSubtractorOVR:inst3
+S3 <= RippleCarryAdder:inst.S3
+A1 => RippleCarryAdder:inst.A1
+B7 => inst3.IN0
+B7 => inst13.IN0
+C5 => inst3.IN1
+C5 => inst4.IN1
+C5 => inst5.IN1
+C5 => inst6.IN1
+C5 => RippleCarryAdder:inst.Co
+C5 => inst13.IN1
+A3 => RippleCarryAdder:inst.A3
+A3 => inst10.IN1
+A3 => inst8.IN0
+B6 => inst4.IN0
+A2 => RippleCarryAdder:inst.A2
+B5 => inst5.IN0
+A0 => RippleCarryAdder:inst.A0
+B4 => inst6.IN0
+S2 <= RippleCarryAdder:inst.S2
+S1 <= RippleCarryAdder:inst.S1
+S0 <= RippleCarryAdder:inst.S0
+C4 <= RippleCarryAdder:inst.C4
+OVR <= inst12.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|AdderSubtractorOVR:inst3|RippleCarryAdder:inst
+S0 <= FullAdder:inst.P
+A0 => FullAdder:inst.A
+B0 => FullAdder:inst.B
+Co => FullAdder:inst.C
+S1 <= FullAdder:inst1.P
+A1 => FullAdder:inst1.A
+B1 => FullAdder:inst1.B
+S2 <= FullAdder:inst2.P
+A2 => FullAdder:inst2.A
+B2 => FullAdder:inst2.B
+S3 <= FullAdder:inst3.P
+A3 => FullAdder:inst3.A
+B3 => FullAdder:inst3.B
+C4 <= FullAdder:inst3.Q
+
+
+|ALU|AdderSubtractorOVR:inst3|RippleCarryAdder:inst|FullAdder:inst
+P <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+A => inst.IN0
+A => inst3.IN0
+A => inst2.IN0
+B => inst.IN1
+B => inst4.IN0
+B => inst2.IN1
+C => inst1.IN1
+C => inst3.IN1
+C => inst4.IN1
+Q <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|AdderSubtractorOVR:inst3|RippleCarryAdder:inst|FullAdder:inst1
+P <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+A => inst.IN0
+A => inst3.IN0
+A => inst2.IN0
+B => inst.IN1
+B => inst4.IN0
+B => inst2.IN1
+C => inst1.IN1
+C => inst3.IN1
+C => inst4.IN1
+Q <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|AdderSubtractorOVR:inst3|RippleCarryAdder:inst|FullAdder:inst2
+P <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+A => inst.IN0
+A => inst3.IN0
+A => inst2.IN0
+B => inst.IN1
+B => inst4.IN0
+B => inst2.IN1
+C => inst1.IN1
+C => inst3.IN1
+C => inst4.IN1
+Q <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|AdderSubtractorOVR:inst3|RippleCarryAdder:inst|FullAdder:inst3
+P <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+A => inst.IN0
+A => inst3.IN0
+A => inst2.IN0
+B => inst.IN1
+B => inst4.IN0
+B => inst2.IN1
+C => inst1.IN1
+C => inst3.IN1
+C => inst4.IN1
+Q <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+
+

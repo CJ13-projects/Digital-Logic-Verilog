@@ -1,0 +1,6 @@
+|Blank
+1D <= inst.DB_MAX_OUTPUT_PORT_TYPE
+A => inst3.IN1
+A => inst.DATAIN
+
+

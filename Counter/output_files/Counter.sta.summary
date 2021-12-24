@@ -1,0 +1,29 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow Model Setup 'INCREMENT'
+Slack : -0.375
+TNS   : -1.447
+
+Type  : Slow Model Hold 'INCREMENT'
+Slack : 1.095
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'INCREMENT'
+Slack : -1.631
+TNS   : -6.519
+
+Type  : Fast Model Setup 'INCREMENT'
+Slack : 0.455
+TNS   : 0.000
+
+Type  : Fast Model Hold 'INCREMENT'
+Slack : 0.407
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'INCREMENT'
+Slack : -1.380
+TNS   : -5.380
+
+------------------------------------------------------------
